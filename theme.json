@@ -2,7 +2,16 @@
     "version": 2,
     "settings": {
         "appearanceTools": true,
+        "useRootPaddingAwareAlignments": true,
         "color": {
+            "custom": [
+                { "name": "Cream", "slug": "cream", "color": "#F6EEE0" },
+                { "name": "Cream Deep", "slug": "cream-deep", "color": "#EFE3D0" },
+                { "name": "Ink", "slug": "ink", "color": "#2A2520" },
+                { "name": "Slate Deep", "slug": "slate-deep", "color": "#34444C" },
+                { "name": "Accent", "slug": "accent", "color": "#C0612E" },
+                { "name": "Honey", "slug": "honey", "color": "#E0A23E" }
+            ],
             "palette": [
                 { "slug": "cream", "color": "#F6EEE0", "name": "Cream" },
                 { "slug": "cream-deep", "color": "#EFE3D0", "name": "Cream Deep" },
@@ -14,9 +23,39 @@
         },
         "typography": {
             "fontFamilies": [
-                { "fontFamily": "\"Anton\", \"Arial Narrow\", sans-serif", "name": "Anton", "slug": "anton" },
-                { "fontFamily": "\"Newsreader\", Georgia, serif", "name": "Newsreader", "slug": "newsreader" },
-                { "fontFamily": "\"Hanken Grotesk\", system-ui, sans-serif", "name": "Hanken Grotesk", "slug": "hanken-grotesk" }
+                {
+                    "fontFamily": "\"Anton\", \"Arial Narrow\", sans-serif",
+                    "name": "Anton",
+                    "slug": "anton",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Anton",
+                            "src": [ "url('https://fonts.gstatic.com/s/anton/v25/1Pt60L0w8UMx70LUIJ4.woff2') format('woff2')" ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Newsreader\", Georgia, serif",
+                    "name": "Newsreader",
+                    "slug": "newsreader",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Newsreader",
+                            "src": [ "url('https://fonts.gstatic.com/s/newsreader/v31/fBv70NjN4K90C45V617m5W8.woff2') format('woff2')" ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Hanken Grotesk\", system-ui, sans-serif",
+                    "name": "Hanken Grotesk",
+                    "slug": "hanken-grotesk",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Hanken Grotesk",
+                            "src": [ "url('https://fonts.gstatic.com/s/hankengrotesk/v2/X9hs64Z6U7Kq6U0U8U.woff2') format('woff2')" ]
+                        }
+                    ]
+                }
             ],
             "customFontSize": true
         },
@@ -29,13 +68,20 @@
             "units": ["px", "em", "rem", "vh", "vw"]
         }
     },
+    "patternCategories": [
+        { "name": "equestrian-theme", "label": "Equestrian Theme" }
+    ],
+    "templateParts": [
+        { "name": "equestrian-header", "title": "Header", "area": "header" },
+        { "name": "equestrian-footer", "title": "Footer", "area": "footer" }
+    ],
     "styles": {
         "color": {
-            "background": "var(--cream)",
-            "text": "var(--ink)"
+            "background": "#F6EEE0",
+            "text": "#2A2520"
         },
         "typography": {
-            "fontFamily": "var(--font-ui)",
+            "fontFamily": "var(--wp--preset--font-family--hanken-grotesk)",
             "lineHeight": "1.6"
         },
         "spacing": {

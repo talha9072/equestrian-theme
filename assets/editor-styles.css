@@ -1,0 +1,91 @@
+/* 
+   Equestrian Theme Editor Styles
+   Synchronizes the editor view with the frontend.
+*/
+
+:root, .editor-styles-wrapper {
+  /* warm neutrals */
+  --cream:      #F6EEE0;
+  --cream-deep: #EFE3D0;
+  --paper:      #FCF8F1;
+  --ink:        #2A2520;
+  --ink-soft:   #5C5247;
+  --ink-faint:  #8A7F71;
+  --line:       #E2D6C2;
+
+  /* heritage blue-grey (from the podcast art) */
+  --slate:       #7E97A2;
+  --slate-deep:  #34444C;
+  --slate-ink:   #283238;
+
+  /* warm accent — saddle / terracotta (tweakable) */
+  --accent:      #C0612E;
+  --accent-deep: #A04E22;
+  --accent-soft: #F0DCC8;
+  --honey:       #E0A23E;
+
+  --maxw: 1240px;
+
+  /* Font mapping for legacy CSS */
+  --font-display: var(--wp--preset--font-family--anton, 'Anton', 'Arial Narrow', sans-serif);
+  --font-serif:   var(--wp--preset--font-family--newsreader, 'Newsreader', Georgia, serif);
+  --font-ui:      var(--wp--preset--font-family--hanken-grotesk, 'Hanken Grotesk', system-ui, sans-serif);
+  --font-hand:    'Caveat', cursive;
+}
+
+.editor-styles-wrapper {
+    background-color: var(--cream);
+    color: var(--ink);
+    padding: 0;
+}
+
+/* Fix for root container padding */
+.editor-styles-wrapper .is-root-container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+}
+
+/* Ensure the editor container takes full width like the frontend */
+.editor-styles-wrapper .wp-block-group.section,
+.editor-styles-wrapper .wp-block-group.hero,
+.editor-styles-wrapper .site-header,
+.editor-styles-wrapper .site-footer {
+    width: 100%;
+}
+
+.editor-styles-wrapper .container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* Fix for custom elements in the editor */
+image-slot {
+    display: block;
+    background: var(--cream-deep);
+    border: 1px dashed var(--line);
+    min-height: 100px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+image-slot::after {
+    content: "Image Slot: " attr(placeholder);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-align: center;
+    width: 80%;
+}
+
+/* Header fix for editor */
+.editor-styles-wrapper .site-header {
+    position: relative !important;
+    top: 0 !important;
+}
