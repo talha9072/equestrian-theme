@@ -1,0 +1,20 @@
+/*
+Theme Name: Equestrian Theme
+Theme URI: https://equestriandad.co.uk
+Author: Equestrian Dad
+Description: A warm, honest equestrian podcast theme for WordPress.
+Version: 1.0.0
+Requires at least: 5.9
+Tested up to: 6.5
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: equestrian-theme
+*/
+
+/* 
+  Imports the original styles. 
+  In a production theme, you might want to move these to theme.json 
+  but for now we'll keep the design moving.
+*/
+@import url('assets/styles.css');

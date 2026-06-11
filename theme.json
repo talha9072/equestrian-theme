@@ -1,0 +1,63 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "palette": [
+                {
+                    "slug": "cream",
+                    "color": "#F6EEE0",
+                    "name": "Cream"
+                },
+                {
+                    "slug": "cream-deep",
+                    "color": "#EFE3D0",
+                    "name": "Cream Deep"
+                },
+                {
+                    "slug": "ink",
+                    "color": "#2A2520",
+                    "name": "Ink"
+                },
+                {
+                    "slug": "slate-deep",
+                    "color": "#34444C",
+                    "name": "Slate Deep"
+                },
+                {
+                    "slug": "accent",
+                    "color": "#C0612E",
+                    "name": "Saddle (Accent)"
+                },
+                {
+                    "slug": "honey",
+                    "color": "#E0A23E",
+                    "name": "Honey"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Anton\", \"Arial Narrow\", sans-serif",
+                    "name": "Anton",
+                    "slug": "anton"
+                },
+                {
+                    "fontFamily": "\"Newsreader\", Georgia, serif",
+                    "name": "Newsreader",
+                    "slug": "newsreader"
+                },
+                {
+                    "fontFamily": "\"Hanken Grotesk\", system-ui, sans-serif",
+                    "name": "Hanken Grotesk",
+                    "slug": "hanken-grotesk"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "1240px",
+            "wideSize": "1400px"
+        }
+    }
+}
