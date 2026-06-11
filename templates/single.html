@@ -1,0 +1,57 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+<!-- wp:html -->
+<section class="ep-hero" style="padding: 64px 0;">
+  <div class="container">
+    <div class="ep-hero-grid" style="display: grid; grid-template-columns: 340px 1fr; gap: 44px; align-items: start;">
+      <div class="ep-hero-art">
+        <image-slot id="ep-art" shape="rounded" radius="20" placeholder="Drop episode artwork"></image-slot>
+      </div>
+      <div class="ep-hero-info">
+        <div class="ep-tags">
+          <span class="chip accent">Episode 24</span>
+          <span class="chip">Mental health</span>
+          <span class="chip">Wins &amp; losses</span>
+        </div>
+        <h1 class="display ep-h1" style="font-size: clamp(34px, 5vw, 56px); margin: 18px 0;">The day the rosettes<br>didn't matter</h1>
+        <p class="lead ep-standfirst">After a hard season of near-misses, a fall at the county show could have broken her. Instead it became the moment everything changed — for her, and for me in the stands.</p>
+        <div class="ep-byline">
+          <span class="byline-av"><span>ED</span></span>
+          <div><strong>The Equestrian Dad</strong><span>Published 9 June 2026 · 45 min listen</span></div>
+        </div>
+        <div class="player" data-dur="2730">
+          <div class="art"><image-slot id="ep-player-art" shape="rounded" radius="14" placeholder="Art"></image-slot></div>
+          <div class="player-body">
+            <div class="player-meta"><span class="ep">Episode 24</span><span style="color:var(--ink-faint);font-size:13px">The Equestrian Dad</span></div>
+            <div class="player-title">The day the rosettes didn't matter</div>
+            <div class="player-controls">
+              <button class="play-btn" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+              <div class="progress-wrap">
+                <span class="time" data-cur>15:28</span>
+                <div class="progress"><div class="fill"></div><div class="knob"></div></div>
+                <span class="time" data-dur>45:30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ep-content" style="padding: 64px 0;">
+  <div class="container content-grid">
+    <article class="prose">
+      <!-- wp:post-content /-->
+    </article>
+  </div>
+</section>
+<!-- /wp:html -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

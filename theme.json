@@ -1,0 +1,27 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "1200px",
+			"wideSize": "1400px"
+		},
+		"typography": {
+			"customFontSize": true
+		},
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#283238",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#F6EEE0",
+					"name": "Secondary"
+				}
+			]
+		}
+	}
+}
