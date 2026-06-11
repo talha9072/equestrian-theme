@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"hero","layout":{"type":"constrained"}} -->
-<section class="wp-block-group hero">
+<!-- wp:html -->
+<section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="kicker">A warm, honest equestrian podcast</span>
@@ -38,4 +38,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

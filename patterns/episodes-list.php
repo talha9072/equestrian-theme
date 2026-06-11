@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section" id="latest">
+<!-- wp:html -->
+<section class="section" id="latest">
   <div class="container">
     <div class="eyebrow-row">
       <div><span class="kicker">From the archive</span><h2 class="display">Recent episodes</h2></div>
@@ -41,4 +41,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

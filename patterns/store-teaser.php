@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section" id="shop">
+<!-- wp:html -->
+<section class="section" id="shop">
   <div class="container">
     <div class="eyebrow-row">
       <div><span class="kicker">The ED Shop</span><h2 class="display">Wear the yard</h2></div>
@@ -33,11 +33,11 @@
         <div class="pimg"><span class="tag">New</span><image-slot id="p-tote" shape="rect" placeholder="Tote photo"></image-slot></div>
         <div class="pbody">
           <span class="pcat">Accessories</span>
-          <h3>Muck & Manners Tote</h3>
-          <div class="prow"><span class="price">£18</span><button class="add" data-name="Muck & Manners Tote">Add to basket</button></div>
+          <h3>Muck &amp; Manners Tote</h3>
+          <div class="prow"><span class="price">£18</span><button class="add" data-name="Muck &amp; Manners Tote">Add to basket</button></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

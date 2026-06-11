@@ -5,11 +5,11 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section tight","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section tight" id="listen" style="padding-top:0">
+<!-- wp:html -->
+<section class="section tight" id="listen">
   <div class="container">
     <div class="listen-head">
-      <span class="kicker">Subscribe & follow</span>
+      <span class="kicker">Subscribe &amp; follow</span>
       <h2 class="display">Listen wherever you are</h2>
     </div>
     <div class="listen-grid">
@@ -32,4 +32,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

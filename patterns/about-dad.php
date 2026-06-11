@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section" id="about">
+<!-- wp:html -->
+<section class="section" id="about">
   <div class="container about-grid">
     <div class="about-media">
       <div class="about-plank plank"></div>
@@ -24,4 +24,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

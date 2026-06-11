@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section tight","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section tight">
+<!-- wp:html -->
+<section class="section tight">
   <div class="container">
     <div class="news-band" style="background:var(--accent)">
       <div class="news-inner">
@@ -23,4 +23,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->

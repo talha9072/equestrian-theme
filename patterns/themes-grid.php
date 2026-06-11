@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"backgroundColor":"cream-deep","layout":{"type":"constrained"}} -->
-<section class="wp-block-group section has-cream-deep-background-color has-background" style="background-color:var(--cream-deep)">
+<!-- wp:html -->
+<section class="section has-cream-deep-background-color has-background">
   <div class="container">
     <div class="section-head center">
       <span class="kicker">What we talk about</span>
@@ -26,7 +26,7 @@
       </div>
       <div class="theme-card">
         <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4ZM6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3"/></svg></div>
-        <h3>Wins & losses</h3>
+        <h3>Wins &amp; losses</h3>
         <p>Holding a rosette lightly and a heartbreak gently — and why the result was never the point.</p>
       </div>
       <div class="theme-card">
@@ -47,4 +47,4 @@
     </div>
   </div>
 </section>
-<!-- /wp:group -->
+<!-- /wp:html -->
