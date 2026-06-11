@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Equestrian Dad — Podcast</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span>ED</span></span>
+      <span class="brand-name">The Equestrian Dad<small>The Podcast</small></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="episode.html">Episodes</a>
+      <a href="index.html#about">About</a>
+      <a href="store.html">Shop</a>
+      <a href="index.html#listen">Listen</a>
+    </nav>
+    <div class="header-cta">
+      <div class="listen-mini">
+        <a href="#listen" title="Apple Podcasts" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" style="color:var(--apple)"><circle cx="12" cy="10.5" r="2.1" fill="currentColor"/><path fill="currentColor" d="M12 14c-1.4 0-2.5 1-2.7 2.4l-.5 3.3a1 1 0 0 0 1 1.2h4.4a1 1 0 0 0 1-1.2l-.5-3.3C14.5 15 13.4 14 12 14Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7.3 14.2a6 6 0 1 1 9.4 0M9.6 12.1a3 3 0 1 1 4.8 0"/></svg></a>
+        <a href="#listen" title="Spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--spotify)"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.2c3.8-.87 7.08-.5 9.72 1.1.3.18.39.57.21.85Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.36.22.48.7.25 1.07Zm.1-2.85C14.83 8.96 9.1 8.78 5.86 9.76a.93.93 0 1 1-.54-1.78c3.72-1.13 10.05-.91 13.4 1.08a.93.93 0 1 1-.95 1.6Z"/></svg></a>
+        <a href="#listen" title="Amazon Music" aria-label="Amazon Music"><svg viewBox="0 0 24 24" style="color:#0a9aa3"><path fill="currentColor" d="M14 4v8.7a3 3 0 1 0 1.8 2.8V8h3V4h-4.8Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M4 18.5c3.2 1.8 6.8 1.8 10 0"/></svg></a>
+        <a href="#listen" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--youtube)"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.8 12 4.8 12 4.8s-7 0-8.9.6A3 3 0 0 0 1 7.5C.4 9.4.4 12 .4 12s0 2.6.6 4.5a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1c.6-1.9.6-4.5.6-4.5s0-2.6-.6-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
+      </div>
+      <a href="#listen" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Listen
+      </a>
+      <button class="menu-toggle btn btn-ghost" aria-label="Menu" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">A warm, honest equestrian podcast</span>
+      <h1 class="display hero-title">From her first<br>pony to her own<br><span class="hl">stable yard</span></h1>
+      <p class="lead">One dad in the stands, telling the story of his daughter's life in the saddle — from a four-year-old's first wobbly trot to running her own riding school in her mid-twenties. Mental health, nerves, wins and losses, and everything young people face finding their way.</p>
+      <div class="hero-actions">
+        <a href="#latest" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play the latest episode
+        </a>
+        <a href="#about" class="btn btn-ghost">Meet the Dad</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>20</strong><span>years in the saddle</span></div>
+        <div><strong>Weekly</strong><span>new episodes</span></div>
+        <div><strong>4&nbsp;→&nbsp;24</strong><span>her whole journey</span></div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-plank plank"></div>
+      <image-slot id="hero-photo" class="hero-photo" shape="rounded" radius="20"
+        placeholder="Drop a warm photo of the dad &amp; daughter"></image-slot>
+      <div class="hero-float">
+        <button class="mini-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div>
+          <span class="mini-ep">Now playing · Ep. 24</span>
+          <span class="mini-title">The day the rosettes didn't matter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LISTEN ROW ============================ -->
+<section class="section tight" id="listen" style="padding-top:0">
+  <div class="container">
+    <div class="listen-head">
+      <span class="kicker">Subscribe & follow</span>
+      <h2 class="display">Listen wherever you are</h2>
+    </div>
+    <div class="listen-grid">
+      <a class="listen-card" href="#">
+        <span class="pico apple"><svg viewBox="0 0 24 24"><circle cx="12" cy="10.5" r="2.1" fill="currentColor"/><path fill="currentColor" d="M12 14c-1.4 0-2.5 1-2.7 2.4l-.5 3.3a1 1 0 0 0 1 1.2h4.4a1 1 0 0 0 1-1.2l-.5-3.3C14.5 15 13.4 14 12 14Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7.3 14.2a6 6 0 1 1 9.4 0M9.6 12.1a3 3 0 1 1 4.8 0"/></svg></span>
+        <span><span class="plabel">Listen on</span><br><span class="pname">Apple Podcasts</span></span>
+      </a>
+      <a class="listen-card" href="#">
+        <span class="pico spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.2c3.8-.87 7.08-.5 9.72 1.1.3.18.39.57.21.85Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.36.22.48.7.25 1.07Zm.1-2.85C14.83 8.96 9.1 8.78 5.86 9.76a.93.93 0 1 1-.54-1.78c3.72-1.13 10.05-.91 13.4 1.08a.93.93 0 1 1-.95 1.6Z"/></svg></span>
+        <span><span class="plabel">Listen on</span><br><span class="pname">Spotify</span></span>
+      </a>
+      <a class="listen-card" href="#">
+        <span class="pico amazon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M14 4v8.7a3 3 0 1 0 1.8 2.8V8h3V4h-4.8Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M4 18.5c3.2 1.8 6.8 1.8 10 0"/></svg></span>
+        <span><span class="plabel">Listen on</span><br><span class="pname">Amazon Music</span></span>
+      </a>
+      <a class="listen-card" href="#">
+        <span class="pico youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.8 12 4.8 12 4.8s-7 0-8.9.6A3 3 0 0 0 1 7.5C.4 9.4.4 12 .4 12s0 2.6.6 4.5a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1c.6-1.9.6-4.5.6-4.5s0-2.6-.6-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></span>
+        <span><span class="plabel">Watch on</span><br><span class="pname">YouTube</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LATEST EPISODE ============================ -->
+<section class="section" id="latest" style="background:var(--cream-deep)">
+  <div class="container">
+    <div class="eyebrow-row">
+      <div><span class="kicker">Hot off the yard</span><h2 class="display">The latest episode</h2></div>
+      <a href="episode.html" class="btn btn-ghost">All episodes →</a>
+    </div>
+    <div class="latest-wrap">
+      <div class="latest-art">
+        <image-slot id="latest-art" shape="rounded" radius="18" placeholder="Episode artwork"></image-slot>
+        <span class="latest-badge">New</span>
+      </div>
+      <div class="latest-body">
+        <div class="latest-meta">
+          <span class="chip accent">Episode 24</span>
+          <span class="chip">Mental health</span>
+          <span class="latest-date">9 June 2026 · 45 min</span>
+        </div>
+        <h3 class="latest-title serif">The day the rosettes didn't matter</h3>
+        <p class="latest-desc">After a hard season of near-misses, a fall at the county show could have broken her. Instead it became the moment everything changed. A conversation about losing well, the pressure we put on our kids, and learning that the result was never really the point.</p>
+        <div class="player" data-dur="2730" style="margin-top:8px">
+          <div class="art"><image-slot id="player-art" shape="rounded" radius="14" placeholder="Art"></image-slot></div>
+          <div class="player-body">
+            <div class="player-meta"><span class="ep">Episode 24</span><span style="color:var(--ink-faint);font-size:13px">The Equestrian Dad</span></div>
+            <div class="player-title">The day the rosettes didn't matter</div>
+            <div class="player-controls">
+              <button class="play-btn" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+              <div class="progress-wrap">
+                <span class="time" data-cur>15:28</span>
+                <div class="progress"><div class="fill"></div><div class="knob"></div></div>
+                <span class="time" data-dur>45:30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <div class="about-plank plank"></div>
+      <image-slot id="about-photo" shape="rounded" radius="20" placeholder="Drop a photo of the host"></image-slot>
+    </div>
+    <div class="about-copy">
+      <span class="kicker">Meet the Equestrian Dad</span>
+      <h2 class="display" style="font-size:clamp(34px,4.5vw,54px);margin:12px 0 0">I held the lead rope. She did the brave bit.</h2>
+      <p class="serif about-lead">It started when she was four years old and sat on a pony for the very first time. I had no idea that wobbly little trot was the start of twenty years of early mornings, muddy boots, tears in the lorry park, and a quiet kind of courage I'm still learning from.</p>
+      <p class="serif about-lead">Now she's in her mid-twenties, running her own riding school and an alternative provision for young people who need somewhere to belong. This is her journey — told honestly, from the one place I've always had: the seat in the stands.</p>
+      <div class="about-sign">
+        <span class="hand">— Dad</span>
+        <a href="episode.html" class="btn btn-dark">Start from episode one</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THEMES ============================ -->
+<section class="section" style="background:var(--cream-deep)">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">What we talk about</span>
+      <h2>The real stuff, with an equestrian twist</h2>
+      <p class="lead">Every episode sits a true story from the yard next to the things every young person wrestles with growing up.</p>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.5 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.5 0 5.2 3.5 3.5 7-2.5 4.5-5.5 9-5.5 9Z"/></svg></div>
+        <h3>Mental health</h3>
+        <p>Talking openly about the heavy days — and how the yard can be both the pressure and the cure.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
+        <h3>Overcoming anxiety</h3>
+        <p>Competition nerves, the fear after a fall, and the small rituals that get you back in the saddle.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4ZM6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3"/></svg></div>
+        <h3>Wins & losses</h3>
+        <p>Holding a rosette lightly and a heartbreak gently — and why the result was never the point.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3-6 5-9 8-9s5 3 8 9M12 9V4M9 6l3-2 3 2"/></svg></div>
+        <h3>Obstacles</h3>
+        <p>Injuries, setbacks and the jumps that look too big — and learning to ride at them anyway.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 6a3 3 0 0 1 0 6M18 20a6 6 0 0 0-3-5.2"/></svg></div>
+        <h3>Peer pressure</h3>
+        <p>Finding your own line when everyone else is jumping — friendship, fitting in, and staying true.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2Z"/></svg></div>
+        <h3>Finding your way</h3>
+        <p>From pony-mad kid to running her own yard — building a life and a livelihood you believe in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EPISODES ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow-row">
+      <div><span class="kicker">From the archive</span><h2 class="display">Recent episodes</h2></div>
+      <a href="episode.html" class="btn btn-ghost">Browse all episodes →</a>
+    </div>
+    <div class="ep-list">
+      <a class="ep-row" href="episode.html">
+        <button class="ep-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div><span class="ep-num">EP 24</span><h3>The day the rosettes didn't matter</h3><p>Losing well, the pressure we put on our kids, and learning the result was never the point.</p></div>
+        <div class="ep-side"><span class="dur">45 min</span><br>9 Jun 2026</div>
+      </a>
+      <a class="ep-row" href="episode.html">
+        <button class="ep-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div><span class="ep-num">EP 23</span><h3>First day at the new yard</h3><p>Starting again, feeling like the outsider, and the friend who made all the difference.</p></div>
+        <div class="ep-side"><span class="dur">38 min</span><br>2 Jun 2026</div>
+      </a>
+      <a class="ep-row" href="episode.html">
+        <button class="ep-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div><span class="ep-num">EP 22</span><h3>The fall, and getting back on</h3><p>What really happens to your confidence after a bad one — and how we rebuilt it, jump by jump.</p></div>
+        <div class="ep-side"><span class="dur">52 min</span><br>26 May 2026</div>
+      </a>
+      <a class="ep-row" href="episode.html">
+        <button class="ep-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div><span class="ep-num">EP 21</span><h3>When she said she wanted to teach</h3><p>The conversation that turned a hobby into a calling — and a business plan written on a feed-room wall.</p></div>
+        <div class="ep-side"><span class="dur">41 min</span><br>19 May 2026</div>
+      </a>
+      <a class="ep-row" href="episode.html">
+        <button class="ep-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div><span class="ep-num">EP 20</span><h3>The pony nobody else wanted</h3><p>A tricky little mare, a stubborn ten-year-old, and the unlikely partnership that taught us both patience.</p></div>
+        <div class="ep-side"><span class="dur">36 min</span><br>12 May 2026</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUOTE BAND ============================ -->
+<section class="quote-band plank">
+  <div class="container">
+    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M10 7H6a4 4 0 0 0-4 4v6h7v-6H5a1 1 0 0 1 1-1h2V7Zm12 0h-4a4 4 0 0 0-4 4v6h7v-6h-4a1 1 0 0 1 1-1h2V7Z"/></svg>
+    <blockquote class="quote-text serif">Listening on the school run, my daughter turned to me and said, “Dad, that's exactly how I feel.” This podcast started a conversation we'd never managed to have.</blockquote>
+    <p class="quote-cite">— A listener, somewhere in a muddy lorry park</p>
+  </div>
+</section>
+
+<!-- ============================ STORE TEASER ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow-row">
+      <div><span class="kicker">The ED Shop</span><h2 class="display">Wear the yard</h2></div>
+      <a href="store.html" class="btn btn-ghost">Visit the shop →</a>
+    </div>
+    <div class="product-grid">
+      <div class="product">
+        <div class="pimg"><span class="tag">Bestseller</span><image-slot id="p-hoodie" shape="rect" placeholder="Hoodie photo"></image-slot></div>
+        <div class="pbody">
+          <span class="pcat">Apparel</span>
+          <h3>Equestrian Dad Hoodie</h3>
+          <div class="prow"><span class="price">£42</span><button class="add" data-name="Equestrian Dad Hoodie">Add to basket</button></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="pimg"><image-slot id="p-mug" shape="rect" placeholder="Mug photo"></image-slot></div>
+        <div class="pbody">
+          <span class="pcat">Yard kit</span>
+          <h3>“Seat in the Stands” Mug</h3>
+          <div class="prow"><span class="price">£14</span><button class="add" data-name="Seat in the Stands Mug">Add to basket</button></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="pimg"><span class="tag">New</span><image-slot id="p-tote" shape="rect" placeholder="Tote photo"></image-slot></div>
+        <div class="pbody">
+          <span class="pcat">Accessories</span>
+          <h3>Muck & Manners Tote</h3>
+          <div class="prow"><span class="price">£18</span><button class="add" data-name="Muck & Manners Tote">Add to basket</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NEWSLETTER ============================ -->
+<section class="section tight">
+  <div class="container">
+    <div class="news-band" style="background:var(--accent)">
+      <div class="news-inner">
+        <div>
+          <span class="kicker on-dark" style="color:#fff;opacity:.85">Join the yard</span>
+          <h2>One warm note a week, straight to your inbox</h2>
+          <p>New episodes, the story behind them, and the odd photo from the lorry park. No spam — just the good stuff.</p>
+        </div>
+        <form class="nl-form news-form">
+          <input type="email" placeholder="you@example.com" aria-label="Email address" required>
+          <button class="btn btn-light" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer plank">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-right:0">
+          <span class="brand-mark"><span>ED</span></span>
+          <span class="brand-name">The Equestrian Dad<small>The Podcast</small></span>
+        </a>
+        <p class="footer-blurb">A father's-eye view of one girl's twenty-year journey in the saddle — and everything growing up throws at you along the way.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="episode.html">Episodes</a>
+        <a href="index.html#about">About</a>
+        <a href="store.html">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h4>Themes</h4>
+        <a href="#">Mental health</a>
+        <a href="#">Overcoming anxiety</a>
+        <a href="#">Wins & losses</a>
+        <a href="#">Finding your way</a>
+      </div>
+      <div class="footer-col">
+        <h4>Listen & follow</h4>
+        <div class="footer-listen">
+          <a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="10.5" r="2.1" fill="currentColor"/><path fill="currentColor" d="M12 14c-1.4 0-2.5 1-2.7 2.4l-.5 3.3a1 1 0 0 0 1 1.2h4.4a1 1 0 0 0 1-1.2l-.5-3.3C14.5 15 13.4 14 12 14Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7.3 14.2a6 6 0 1 1 9.4 0"/></svg>Apple</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.2c3.8-.87 7.08-.5 9.72 1.1.3.18.39.57.21.85Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.36.22.48.7.25 1.07Z"/></svg>Spotify</a>
+          <a href="#"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M14 4v8.7a3 3 0 1 0 1.8 2.8V8h3V4h-4.8Z"/></svg>Amazon</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.8 12 4.8 12 4.8s-7 0-8.9.6A3 3 0 0 0 1 7.5C.4 9.4.4 12 .4 12s0 2.6.6 4.5a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1c.6-1.9.6-4.5.6-4.5s0-2.6-.6-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Equestrian Dad · equestriandad.co.uk</span>
+      <span>Made warm, in the lorry park.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/app.js"></script>
+
+<!-- ============================ TWEAKS ============================ -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<div id="tweak-root"></div>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "saddle",
+  "hero": "photo",
+  "corners": "soft"
+}/*EDITMODE-END*/;
+
+const ACCENTS = {
+  saddle: ['#C0612E', '#A04E22', '#F0DCC8'],
+  clay:   ['#B24A39', '#95392B', '#EFD6CF'],
+  honey:  ['#CF8B2E', '#AE7220', '#F3E3C6'],
+  sage:   ['#6E8B6A', '#566F53', '#DDE6D8'],
+  blue:   ['#5E7E8C', '#496673', '#D6E0E4'],
+};
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => {
+    const r = document.documentElement;
+    const a = ACCENTS[t.accent] || ACCENTS.saddle;
+    r.style.setProperty('--accent', a[0]);
+    r.style.setProperty('--accent-deep', a[1]);
+    r.style.setProperty('--accent-soft', a[2]);
+    const soft = t.corners === 'soft';
+    r.style.setProperty('--radius', soft ? '14px' : '5px');
+    r.style.setProperty('--radius-lg', soft ? '22px' : '7px');
+    r.style.setProperty('--radius-sm', soft ? '9px' : '3px');
+    document.body.classList.toggle('hero-plank-on', t.hero === 'plank');
+  }, [t]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Brand colour" />
+      <TweakColor label="Accent" value={t.accent}
+        options={['saddle','clay','honey','sage','blue']}
+        onChange={(v) => setTweak('accent', v)} />
+      <TweakSection label="Hero" />
+      <TweakRadio label="Treatment" value={t.hero} options={['photo','plank']}
+        onChange={(v) => setTweak('hero', v)} />
+      <TweakSection label="Shape" />
+      <TweakRadio label="Corners" value={t.corners} options={['soft','sharp']}
+        onChange={(v) => setTweak('corners', v)} />
+    </TweaksPanel>
+  );
+}
+ReactDOM.createRoot(document.getElementById('tweak-root')).render(<App />);
+</script>
+
+<style>
+/* ---- HERO ---- */
+.hero { padding: 64px 0 88px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
+.hero-title { font-size: clamp(46px, 7vw, 86px); margin: 18px 0 0; }
+.hero-title .hl { color: var(--accent); }
+.hero-copy .lead { margin: 24px 0 0; max-width: 46ch; }
+.hero-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 40px; margin-top: 40px; }
+.hero-stats div { display: flex; flex-direction: column; }
+.hero-stats strong { font-family: var(--font-display); font-size: 30px; line-height: 1; }
+.hero-stats span { font-size: 13.5px; color: var(--ink-faint); margin-top: 6px; font-weight: 600; }
+.hero-media { position: relative; }
+.hero-plank { position: absolute; inset: 26px -22px -22px 40px; border-radius: var(--radius-lg); opacity: .9; }
+.hero-photo { position: relative; width: 100%; height: auto; aspect-ratio: 4/5; box-shadow: var(--shadow-lg); }
+.hero-float {
+  position: absolute; left: -26px; bottom: 30px; display: flex; align-items: center; gap: 13px;
+  background: var(--paper); border: 1px solid var(--line); padding: 12px 18px 12px 12px;
+  border-radius: 999px; box-shadow: var(--shadow-lg);
+}
+.mini-play { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--accent); color: #fff; display: grid; place-items: center; cursor: pointer; flex: none; }
+.mini-play svg { width: 18px; height: 18px; }
+.mini-ep { display: block; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-deep); }
+.mini-title { display: block; font-family: var(--font-serif); font-weight: 600; font-size: 15px; }
+
+/* hero plank variant (tweak) */
+body.hero-plank-on .hero { background-color: var(--slate-deep);
+  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 1px, rgba(0,0,0,0) 1px 4px, rgba(255,255,255,.025) 4px 5px, rgba(0,0,0,0) 5px 96px), linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.10)); }
+body.hero-plank-on .hero .kicker { color: var(--honey); }
+body.hero-plank-on .hero-title, body.hero-plank-on .hero-stats strong { color: var(--cream); }
+body.hero-plank-on .hero .lead, body.hero-plank-on .hero-stats span { color: rgba(246,238,224,.8); }
+body.hero-plank-on .hero .btn-ghost { color: var(--cream); border-color: rgba(246,238,224,.3); }
+body.hero-plank-on .hero-plank { display: none; }
+
+/* ---- LISTEN ---- */
+.listen-head { text-align: center; margin-bottom: 40px; padding-top: 88px; }
+.listen-head h2 { font-size: clamp(30px,4vw,46px); margin: 12px 0 0; }
+
+/* ---- LATEST ---- */
+.latest-wrap { display: grid; grid-template-columns: 340px 1fr; gap: 44px; align-items: start; }
+.latest-art { position: relative; }
+.latest-art image-slot { width: 100%; height: auto; aspect-ratio: 1/1; box-shadow: var(--shadow); }
+.latest-badge { position: absolute; top: -10px; right: -10px; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; box-shadow: var(--shadow); }
+.latest-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.latest-date { color: var(--ink-faint); font-size: 14px; font-weight: 600; }
+.latest-title { font-size: clamp(28px,3.4vw,42px); line-height: 1.1; font-weight: 600; margin: 16px 0 14px; }
+.latest-desc { max-width: 62ch; color: var(--ink-soft); margin: 0 0 26px; font-size: 17px; }
+
+/* ---- ABOUT ---- */
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+.about-media { position: relative; }
+.about-plank { position: absolute; inset: -22px 40px 26px -22px; border-radius: var(--radius-lg); opacity: .9; }
+.about-media image-slot { position: relative; width: 100%; height: auto; aspect-ratio: 4/5; box-shadow: var(--shadow-lg); }
+.about-lead { font-size: 19px; margin: 20px 0 0; color: var(--ink-soft); }
+.about-sign { display: flex; align-items: center; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
+.hand { font-family: var(--font-hand); font-size: 34px; color: var(--accent); }
+
+/* ---- QUOTE ---- */
+.quote-band { padding: 84px 0; text-align: center; color: var(--cream); }
+.quote-mark { width: 52px; height: 52px; color: var(--honey); opacity: .9; margin: 0 auto 20px; }
+.quote-text { font-size: clamp(24px,3.2vw,38px); line-height: 1.35; font-weight: 500; max-width: 18ch; margin: 0 auto; font-style: italic; }
+.quote-band .container { max-width: 900px; }
+.quote-cite { color: rgba(246,238,224,.65); font-weight: 600; margin-top: 24px; letter-spacing: .02em; }
+
+@media (max-width: 980px) {
+  .hero-grid, .latest-wrap, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-media { max-width: 460px; }
+  .about-media { order: -1; max-width: 460px; }
+  .latest-art { max-width: 320px; }
+}
+@media (max-width: 720px) {
+  .hero-stats { gap: 24px; }
+  .hero-float { left: 0; }
+}
+</style>
+
+<template id="__bundler_thumbnail" data-bg-color="#34444C">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#34444C"/>
+    <g transform="translate(600 360)" fill="none" stroke="#F6EEE0" stroke-width="34" stroke-linecap="round">
+      <path d="M-110 150 C-150 60 -150 -40 -90 -110 C-30 -180 30 -180 90 -110 C150 -40 150 60 110 150"/>
+    </g>
+    <text x="600" y="610" text-anchor="middle" font-family="Anton, Arial Narrow, sans-serif" font-size="150" fill="#F6EEE0" letter-spacing="4">ED</text>
+    <text x="600" y="690" text-anchor="middle" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="34" font-weight="700" fill="#E0A23E" letter-spacing="14">THE EQUESTRIAN DAD</text>
+  </svg>
+</template>
+
+</body>
+</html>

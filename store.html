@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ED Shop — The Equestrian Dad</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><span>ED</span></span>
+      <span class="brand-name">The Equestrian Dad<small>The Podcast</small></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="episode.html">Episodes</a>
+      <a href="index.html#about">About</a>
+      <a href="store.html" class="active">Shop</a>
+      <a href="index.html#listen">Listen</a>
+    </nav>
+    <div class="header-cta">
+      <a href="index.html#listen" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Listen
+      </a>
+      <button class="basket-btn" aria-label="Basket">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8ZM9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" data-cart-count style="display:none">0</span>
+      </button>
+      <button class="menu-toggle btn btn-ghost" aria-label="Menu" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ STORE HERO ============================ -->
+<section class="store-hero">
+  <div class="container store-hero-inner">
+    <div>
+      <span class="kicker">The ED Shop</span>
+      <h1 class="display store-h1">Wear the yard</h1>
+      <p class="lead">Warm, honest, hard-wearing kit for early mornings and muddy boots. Every order helps keep the podcast free — and ad-free.</p>
+    </div>
+    <div class="store-hero-note plank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3-3h12l3 3-3 3v8H6v-8L3 8Z"/><path d="M9 5a3 3 0 0 0 6 0"/></svg>
+      <p>Ethically made, ships in 3–5 days across the UK. Free delivery over £40.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FILTER ============================ -->
+<section class="section" style="padding-top:48px">
+  <div class="container">
+    <div class="filter-row">
+      <div class="filter-chips">
+        <button class="fchip active" data-cat="all">All</button>
+        <button class="fchip" data-cat="apparel">Apparel</button>
+        <button class="fchip" data-cat="yard">Yard kit</button>
+        <button class="fchip" data-cat="accessories">Accessories</button>
+      </div>
+      <span class="filter-count"><strong>8</strong> products</span>
+    </div>
+
+    <div class="product-grid four" id="grid">
+      <div class="product" data-cat="apparel">
+        <div class="pimg"><span class="tag">Bestseller</span><image-slot id="s-hoodie" shape="rect" placeholder="Hoodie photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Apparel</span><h3>Equestrian Dad Hoodie</h3><div class="prow"><span class="price">£42</span><button class="add" data-name="Equestrian Dad Hoodie">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="apparel">
+        <div class="pimg"><image-slot id="s-tee" shape="rect" placeholder="T-shirt photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Apparel</span><h3>“Brave Bit” Tee</h3><div class="prow"><span class="price">£24</span><button class="add" data-name="Brave Bit Tee">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="yard">
+        <div class="pimg"><image-slot id="s-mug" shape="rect" placeholder="Mug photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Yard kit</span><h3>“Seat in the Stands” Mug</h3><div class="prow"><span class="price">£14</span><button class="add" data-name="Seat in the Stands Mug">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="accessories">
+        <div class="pimg"><span class="tag">New</span><image-slot id="s-tote" shape="rect" placeholder="Tote photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Accessories</span><h3>Muck &amp; Manners Tote</h3><div class="prow"><span class="price">£18</span><button class="add" data-name="Muck & Manners Tote">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="apparel">
+        <div class="pimg"><image-slot id="s-cap" shape="rect" placeholder="Cap photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Apparel</span><h3>ED Embroidered Cap</h3><div class="prow"><span class="price">£22</span><button class="add" data-name="ED Embroidered Cap">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="yard">
+        <div class="pimg"><image-slot id="s-flask" shape="rect" placeholder="Flask photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Yard kit</span><h3>Lorry Park Flask</h3><div class="prow"><span class="price">£26</span><button class="add" data-name="Lorry Park Flask">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="apparel">
+        <div class="pimg"><image-slot id="s-beanie" shape="rect" placeholder="Beanie photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Apparel</span><h3>Early Mornings Beanie</h3><div class="prow"><span class="price">£19</span><button class="add" data-name="Early Mornings Beanie">Add</button></div></div>
+      </div>
+      <div class="product" data-cat="accessories">
+        <div class="pimg"><image-slot id="s-pin" shape="rect" placeholder="Pin set photo"></image-slot></div>
+        <div class="pbody"><span class="pcat">Accessories</span><h3>Horseshoe Pin Set</h3><div class="prow"><span class="price">£12</span><button class="add" data-name="Horseshoe Pin Set">Add</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BUNDLE BANNER ============================ -->
+<section class="section tight">
+  <div class="container">
+    <div class="bundle plank">
+      <div class="bundle-art"><image-slot id="bundle-img" shape="rounded" radius="16" placeholder="Bundle photo"></image-slot></div>
+      <div class="bundle-copy">
+        <span class="kicker on-dark">Save £14</span>
+        <h2 class="display">The Yard Starter Bundle</h2>
+        <p>Hoodie, mug and tote — everything you need for a frosty morning at the stables, in one warm box.</p>
+        <div class="bundle-actions">
+          <span class="bundle-price"><s>£74</s> £60</span>
+          <button class="btn btn-light add" data-name="Yard Starter Bundle">Add bundle to basket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer plank">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-right:0">
+          <span class="brand-mark"><span>ED</span></span>
+          <span class="brand-name">The Equestrian Dad<small>The Podcast</small></span>
+        </a>
+        <p class="footer-blurb">A father's-eye view of one girl's twenty-year journey in the saddle — and everything growing up throws at you along the way.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="episode.html">Episodes</a>
+        <a href="index.html#about">About</a>
+        <a href="store.html">Shop</a>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="store.html">Apparel</a>
+        <a href="store.html">Yard kit</a>
+        <a href="store.html">Accessories</a>
+        <a href="#">Delivery & returns</a>
+      </div>
+      <div class="footer-col">
+        <h4>Listen & follow</h4>
+        <div class="footer-listen">
+          <a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="10.5" r="2.1" fill="currentColor"/><path fill="currentColor" d="M12 14c-1.4 0-2.5 1-2.7 2.4l-.5 3.3a1 1 0 0 0 1 1.2h4.4a1 1 0 0 0 1-1.2l-.5-3.3C14.5 15 13.4 14 12 14Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7.3 14.2a6 6 0 1 1 9.4 0"/></svg>Apple</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.2c3.8-.87 7.08-.5 9.72 1.1.3.18.39.57.21.85Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.36.22.48.7.25 1.07Z"/></svg>Spotify</a>
+          <a href="#"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M14 4v8.7a3 3 0 1 0 1.8 2.8V8h3V4h-4.8Z"/></svg>Amazon</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.8 12 4.8 12 4.8s-7 0-8.9.6A3 3 0 0 0 1 7.5C.4 9.4.4 12 .4 12s0 2.6.6 4.5a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1c.6-1.9.6-4.5.6-4.5s0-2.6-.6-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Equestrian Dad · equestriandad.co.uk</span>
+      <span>Made warm, in the lorry park.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  document.querySelectorAll('.fchip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('.fchip').forEach(function (c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var cat = chip.dataset.cat, shown = 0;
+      document.querySelectorAll('#grid .product').forEach(function (p) {
+        var ok = cat === 'all' || p.dataset.cat === cat;
+        p.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      var cnt = document.querySelector('.filter-count strong');
+      if (cnt) cnt.textContent = shown;
+    });
+  });
+</script>
+
+<style>
+.basket-btn { position: relative; width: 42px; height: 42px; border-radius: 11px; border: 1px solid var(--line); background: #fff; color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: all .18s; }
+.basket-btn:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.basket-btn svg { width: 21px; height: 21px; }
+.cart-count { position: absolute; top: -7px; right: -7px; min-width: 21px; height: 21px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+
+.store-hero { padding: 56px 0 8px; }
+.store-hero-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+.store-h1 { font-size: clamp(48px, 7vw, 84px); margin: 14px 0 0; }
+.store-hero .lead { margin-top: 20px; max-width: 48ch; }
+.store-hero-note { display: flex; align-items: center; gap: 18px; padding: 26px 30px; border-radius: var(--radius-lg); color: var(--cream); }
+.store-hero-note svg { width: 40px; height: 40px; flex: none; color: var(--honey); }
+.store-hero-note p { margin: 0; font-family: var(--font-serif); font-size: 17px; line-height: 1.5; }
+
+.filter-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+.filter-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.fchip { font-family: var(--font-ui); font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 999px; border: 1.5px solid var(--line); background: transparent; color: var(--ink-soft); cursor: pointer; transition: all .18s; }
+.fchip:hover { border-color: var(--ink); color: var(--ink); }
+.fchip.active { background: var(--slate-ink); border-color: var(--slate-ink); color: var(--cream); }
+.filter-count { color: var(--ink-faint); font-size: 14.5px; }
+.filter-count strong { color: var(--ink); }
+
+.store-hero-note image-slot, .product .pimg image-slot { width: 100%; height: 100%; }
+
+.bundle { display: grid; grid-template-columns: 340px 1fr; gap: 44px; align-items: center; border-radius: var(--radius-lg); padding: 36px; color: var(--cream); }
+.bundle-art image-slot { width: 100%; height: auto; aspect-ratio: 1/1; box-shadow: var(--shadow-lg); }
+.bundle-copy h2 { font-size: clamp(30px, 4vw, 50px); margin: 10px 0 0; color: var(--cream); }
+.bundle-copy p { font-family: var(--font-serif); font-size: 18px; color: rgba(246,238,224,.8); margin: 14px 0 0; max-width: 48ch; }
+.bundle-actions { display: flex; align-items: center; gap: 24px; margin-top: 26px; flex-wrap: wrap; }
+.bundle-price { font-family: var(--font-display); font-size: 32px; color: var(--honey); }
+.bundle-price s { color: rgba(246,238,224,.45); font-size: 22px; margin-right: 8px; }
+
+@media (max-width: 980px) {
+  .store-hero-inner { grid-template-columns: 1fr; gap: 28px; }
+  .bundle { grid-template-columns: 1fr; gap: 28px; }
+  .bundle-art { max-width: 320px; }
+}
+</style>
+
+</body>
+</html>
