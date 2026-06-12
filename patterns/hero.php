@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Title: Hero Section
  * Slug: equestrian-theme/hero
@@ -6,8 +6,8 @@
  * Description: Native Gutenberg Block Pattern for the Equestrian Dad Hero section.
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"hero","layout":{"type":"constrained"}} -->
-<section class="wp-block-group hero">
+<!-- wp:group {"tagName":"div","className":"hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group hero">
   <!-- wp:group {"className":"container hero-grid","layout":{"type":"constrained"}} -->
   <div class="wp-block-group container hero-grid">
     
@@ -18,11 +18,11 @@
       <!-- /wp:paragraph -->
 
       <!-- wp:heading {"level":1,"className":"display hero-title"} -->
-      <h1 class="wp-block-heading display hero-title">From her first<br>pony to her own<br><span class="hl">stable yard</span></h1>
+      <h1 class="wp-block-heading display hero-title">the equestrian<br>Dad's Podcast<br><span class="hl">My journey</span></h1>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph {"className":"lead"} -->
-      <p class="lead">One dad in the stands, telling the story of his daughter's life in the saddle — from a four-year-old's first wobbly trot to running her own riding school in her mid-twenties. Mental health, nerves, wins and losses, and everything young people face finding their way.</p>
+      <p class="lead">"Daddy, I'd like a pony", I didn't realise at the time these words could change my life forever! Cold mornings, travelling up and down the country, and making sure I record every jump for Instagram, and every fall, and every injury.</p>
       <!-- /wp:paragraph -->
 
       <!-- wp:buttons {"className":"hero-actions","layout":{"type":"flex","justifyContent":"left"}} -->
@@ -88,7 +88,7 @@
 
       <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"hero-photo"} -->
       <figure class="wp-block-image size-full hero-photo">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/uploads/EquestrianDad-ComingSoon.PNG" alt="The Equestrian Dad Podcast Cover"/>
+        <img src="http://equestrian-dad.local/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2344-1200x1500-2.jpg" alt="The Equestrian Dad Podcast Cover"/>
       </figure>
       <!-- /wp:image -->
 
@@ -115,5 +115,5 @@
 
   </div>
   <!-- /wp:group -->
-</section>
+</div>
 <!-- /wp:group -->
