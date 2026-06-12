@@ -51,12 +51,31 @@ function equestrian_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'equestrian_editor_assets' );
 
 /**
- * Register block pattern categories.
+ * Register block pattern categories and patterns manually to ensure 100% reliability.
  */
-function equestrian_theme_register_pattern_category() {
+function equestrian_theme_register_patterns() {
     register_block_pattern_category(
         'equestrian-theme',
         array( 'label' => __( 'Equestrian Theme', 'equestrian-theme' ) )
     );
+
+    $hero_php = get_theme_file_path( 'patterns/hero.php' );
+    if ( file_exists( $hero_php ) ) {
+        ob_start();
+        include $hero_php;
+        $pattern_content = ob_get_clean();
+        
+        // Strip the PHP comment header if present
+        $pattern_content = preg_replace( '/^.*?-->/s', '', trim( $pattern_content ) );
+        
+        register_block_pattern(
+            'equestrian-theme/hero',
+            array(
+                'title'       => __( 'Hero Section', 'equestrian-theme' ),
+                'categories'  => array( 'equestrian-theme' ),
+                'content'     => trim( $pattern_content ),
+            )
+        );
+    }
 }
-add_action( 'init', 'equestrian_theme_register_pattern_category' );
+add_action( 'init', 'equestrian_theme_register_patterns' );

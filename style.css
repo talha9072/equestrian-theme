@@ -11,3 +11,301 @@ Text Domain: equestrian-theme
 
 @import "assets/styles.css";
 @import "header.css";
+
+/* ============================================================
+   HERO SECTION STYLES
+   ============================================================ */
+
+.hero {
+  padding: 64px 0 88px !important;
+  overflow: hidden !important;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.05fr .95fr !important;
+  gap: 64px !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+/* heritage plank texture echoing the podcast art */
+.hero-plank .plank {
+    background-color: var(--slate-deep) !important;
+    background-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.16) 0 1px, rgba(0, 0, 0, 0) 1px 4px, rgba(255, 255, 255, 0.025) 4px 5px, rgba(0, 0, 0, 0) 5px 96px), linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.10)) !important;
+}
+.hero-title {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  font-size: clamp(46px, 7vw, 86px) !important;
+  margin: 18px 0 0 !important;
+  line-height: 0.92 !important;
+  color: var(--ink) !important;
+  letter-spacing: 0.005em !important;
+}
+
+.hero-title .hl {
+  color: var(--accent) !important;
+}
+
+.hero-copy .lead {
+  margin: 24px 0 0 !important;
+  max-width: 46ch !important;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  color: var(--ink-soft) !important;
+}
+
+.hero-actions {
+  display: flex !important;
+  gap: 14px !important;
+  margin-top: 32px !important;
+  flex-wrap: wrap !important;
+}
+
+.hero-actions .wp-block-button {
+  margin: 0 !important;
+  background: transparent !important;
+  border-radius: 999px !important;
+}
+
+.hero-actions .wp-block-button .wp-block-button__link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  font-family: var(--font-ui) !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  padding: 13px 22px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  border: 1.5px solid transparent !important;
+  transition: all .2s ease !important;
+  letter-spacing: .01em !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+
+.hero-actions .btn-primary .wp-block-button__link {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+.hero-actions .btn-primary .wp-block-button__link:hover {
+  background: var(--accent-deep) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 28px -14px rgba(160,78,34,.7) !important;
+}
+
+.hero-actions .btn-primary .wp-block-button__link::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 18px !important;
+  height: 18px !important;
+  background-color: currentColor !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") no-repeat center/contain !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") no-repeat center/contain !important;
+}
+
+.hero-actions .btn-ghost .wp-block-button__link {
+  background: transparent !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+.hero-actions .btn-ghost .wp-block-button__link:hover {
+  border-color: var(--ink) !important;
+  background: rgba(0,0,0,.03) !important;
+}
+
+.hero-stats {
+  display: flex !important;
+  gap: 40px !important;
+  margin-top: 40px !important;
+}
+
+.hero-stats .stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+}
+
+.hero-stats .stat-item p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-stats strong {
+  font-family: var(--font-display) !important;
+  font-size: 30px !important;
+  line-height: 1 !important;
+  display: block !important;
+  color: var(--ink) !important;
+}
+
+.hero-stats span {
+  font-size: 13.5px !important;
+  color: var(--ink-faint) !important;
+  margin-top: 6px !important;
+  font-weight: 600 !important;
+  display: block !important;
+}
+
+/* Hero media area */
+.hero-media {
+  position: relative !important;
+  background: transparent !important;
+}
+
+.hero-plank {
+  position: absolute !important;
+  inset: 26px -22px -22px 40px !important;
+  border-radius: var(--radius-lg) !important;
+  opacity: .9 !important;
+  margin: 0 !important;
+  background: var(--slate-deep) !important;
+}
+
+/* Style Gutenberg's native image upload / wrapper */
+.hero-photo {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4/5 !important;
+  box-shadow: var(--shadow-lg) !important;
+  margin: 0 !important;
+}
+
+.hero-photo img, 
+.hero-photo .components-placeholder,
+.hero-photo .wp-block-image__placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+}
+
+/* Floating overlay bar styling */
+.hero-float {
+  position: absolute !important;
+  left: -26px !important;
+  bottom: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 13px !important;
+  background: var(--paper) !important;
+  border: 1px solid var(--line) !important;
+  padding: 12px 18px 12px 12px !important;
+  border-radius: 999px !important;
+  box-shadow: var(--shadow-lg) !important;
+  margin: 0 !important;
+  width: fit-content !important;
+  z-index: 10 !important;
+}
+
+.hero-float .mini-play {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: var(--accent) !important;
+  color: #fff !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  flex: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+.hero-float .mini-play svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  margin: 0 0 0 2px !important; /* Optical offset for perfect center alignment of pointing triangle */
+}
+
+.hero-float .mini-play::before {
+  display: none !important;
+}
+
+.hero-float .mini-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+}
+
+.hero-float .mini-text-wrap p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mini-ep {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  color: var(--accent-deep) !important;
+}
+
+.mini-title {
+  display: block !important;
+  font-family: var(--font-serif) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  color: var(--ink) !important;
+  margin-top: 2px !important;
+}
+
+/* hero plank variant (tweak) */
+body.hero-plank-on .hero {
+  background-color: var(--slate-deep) !important;
+  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 1px, rgba(0,0,0,0) 1px 4px, rgba(255,255,255,.025) 4px 5px, rgba(0,0,0,0) 5px 96px), linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.10)) !important;
+}
+body.hero-plank-on .hero .kicker {
+  color: var(--honey) !important;
+}
+body.hero-plank-on .hero-title, 
+body.hero-plank-on .hero-stats strong {
+  color: var(--cream) !important;
+}
+body.hero-plank-on .hero .lead, 
+body.hero-plank-on .hero-stats span {
+  color: rgba(246,238,224,.8) !important;
+}
+body.hero-plank-on .hero .btn-ghost .wp-block-button__link {
+  color: var(--cream) !important;
+  border-color: rgba(246,238,224,.3) !important;
+}
+body.hero-plank-on .hero-plank {
+  display: none !important;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT MEDIA QUERIES
+   ============================================================ */
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .hero-media {
+    max-width: 460px !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 720px) {
+  .hero-stats {
+    gap: 24px !important;
+  }
+  .hero-float {
+    left: 0 !important;
+  }
+}
+
+
+
