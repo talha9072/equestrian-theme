@@ -77,6 +77,16 @@
     } else if (href === 'store.html' || href === 'http://store.html') {
       link.setAttribute('href', '/wp-content/themes/equestrian-theme/store.html');
     }
+
+    /* ---- mark the standard 'Listen' text link to hide on tablets/mobiles ---- */
+    if (href === '/#listen' || href === 'index.html#listen' || href === 'http://index.html#listen') {
+      if (!link.classList.contains('mobile-listen-btn')) {
+        const parentLi = link.closest('.wp-block-navigation-item');
+        if (parentLi) {
+          parentLi.classList.add('desktop-only-listen');
+        }
+      }
+    }
   });
 
   /* ---- append professional mobile listen link ---- */
