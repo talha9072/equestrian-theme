@@ -1,0 +1,13 @@
+/*
+Theme Name: Equestrian Theme
+Theme URI: https://equestriandad.co.uk/
+Author: The Dad
+Description: Warm, honest block theme for Equestrian Dad podcast.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: equestrian-theme
+*/
+
+@import "assets/styles.css";
+@import "header.css";

@@ -63,9 +63,55 @@
     });
   });
 
-  /* ---- mobile menu ---- */
+  /* ---- fix navigation links dynamically (safety layer for Gutenberg database cache) ---- */
+  document.querySelectorAll('.site-header a').forEach(function (link) {
+    var href = link.getAttribute('href') || '';
+    if (href === 'index.html' || href === 'http://index.html') {
+      link.setAttribute('href', '/');
+    } else if (href === 'index.html#about' || href === 'http://index.html#about') {
+      link.setAttribute('href', '/#about');
+    } else if (href === 'index.html#listen' || href === 'http://index.html#listen') {
+      link.setAttribute('href', '/#listen');
+    } else if (href === 'episode.html' || href === 'http://episode.html') {
+      link.setAttribute('href', '/wp-content/themes/equestrian-theme/episode.html');
+    } else if (href === 'store.html' || href === 'http://store.html') {
+      link.setAttribute('href', '/wp-content/themes/equestrian-theme/store.html');
+    }
+  });
+
+  /* ---- append professional mobile listen link ---- */
+  const navContainer = document.querySelector('.site-header .wp-block-navigation__container');
+  if (navContainer) {
+    if (!navContainer.querySelector('.mobile-only-listen')) {
+      const mobileLi = document.createElement('li');
+      mobileLi.className = 'wp-block-navigation-item wp-block-navigation-link mobile-only-listen';
+      
+      const mobileA = document.createElement('a');
+      mobileA.className = 'wp-block-navigation-item__content mobile-listen-btn';
+      mobileA.href = '/#listen';
+      mobileA.innerText = 'Listen';
+      
+      mobileLi.appendChild(mobileA);
+      navContainer.appendChild(mobileLi);
+    }
+  }
+
+  /* ---- close burger menu on click of any links ---- */
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
+
+  document.querySelectorAll('.site-header .wp-block-navigation-item__content').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (nav) {
+        nav.classList.remove('open');
+      }
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* ---- mobile menu toggle ---- */
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       const open = nav.classList.toggle('open');
