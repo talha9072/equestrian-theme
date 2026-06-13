@@ -335,20 +335,20 @@ a { color: inherit; text-decoration: none; }
 /* ============================================================
    EPISODE LIST
    ============================================================ */
-.ep-list { display: flex; flex-direction: column; gap: 14px; }
+.ep-list { display: flex; flex-direction: column; gap: 14px; width: 100%; }
 .ep-row {
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px;
-  padding: 20px 24px; background: var(--paper); border: 1px solid var(--line);
-  border-radius: var(--radius); transition: all .18s;
+  display: grid !important; grid-template-columns: 48px 1fr 100px; align-items: center; gap: 24px;
+  padding: 24px; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius); transition: all .18s; width: 100%; box-sizing: border-box;
 }
 .ep-row:hover { border-color: var(--accent-soft); box-shadow: var(--shadow); transform: translateX(2px); }
 .ep-row .ep-play { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; display: grid; place-items: center; flex: none; transition: all .18s; }
 .ep-row:hover .ep-play { background: var(--accent); border-color: var(--accent); color: #fff; }
 .ep-row .ep-play svg { width: 18px; height: 18px; }
 .ep-num { font-family: var(--font-display); font-size: 14px; color: var(--ink-faint); letter-spacing: .05em; }
-.ep-row h3 { font-family: var(--font-serif); font-weight: 600; font-size: 19px; margin: 2px 0 5px; }
+.ep-row h3 { font-family: var(--font-serif); font-weight: 600; font-size: 19px; margin: 2px 0 5px; line-height: 1.3; }
 .ep-row p { margin: 0; font-size: 14.5px; color: var(--ink-soft); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
-.ep-side { text-align: right; color: var(--ink-faint); font-size: 13.5px; font-weight: 600; white-space: nowrap; }
+.ep-side { text-align: right; color: var(--ink-faint); font-size: 13.5px; font-weight: 600; white-space: nowrap; width: 100px; }
 .ep-side .dur { display: inline-flex; align-items: center; gap: 6px; }
 
 /* ============================================================

@@ -37,9 +37,9 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"className":"ep-list","layout":{"type":"constrained"}} -->
+        <!-- wp:group {"className":"ep-list"} -->
         <div class="wp-block-group ep-list">
-            <!-- wp:group {"className":"ep-row","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <!-- wp:group {"className":"ep-row"} -->
             <div class="wp-block-group ep-row">
                 <!-- wp:group {"className":"ep-play","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group ep-play">
@@ -76,7 +76,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"ep-row","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <!-- wp:group {"className":"ep-row"} -->
             <div class="wp-block-group ep-row">
                 <!-- wp:group {"className":"ep-play","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group ep-play">
@@ -113,7 +113,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"ep-row","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <!-- wp:group {"className":"ep-row"} -->
             <div class="wp-block-group ep-row">
                 <!-- wp:group {"className":"ep-play","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group ep-play">
@@ -150,7 +150,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"ep-row","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <!-- wp:group {"className":"ep-row"} -->
             <div class="wp-block-group ep-row">
                 <!-- wp:group {"className":"ep-play","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group ep-play">
