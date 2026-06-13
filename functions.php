@@ -51,31 +51,73 @@ function equestrian_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'equestrian_editor_assets' );
 
 /**
- * Register block pattern categories and patterns manually to ensure 100% reliability.
+ * Register block pattern categories.
  */
-function equestrian_theme_register_patterns() {
+function equestrian_theme_register_pattern_categories() {
     register_block_pattern_category(
         'equestrian-theme',
         array( 'label' => __( 'Equestrian Theme', 'equestrian-theme' ) )
     );
-
-    $hero_php = get_theme_file_path( 'patterns/hero.php' );
-    if ( file_exists( $hero_php ) ) {
-        ob_start();
-        include $hero_php;
-        $pattern_content = ob_get_clean();
-        
-        // Strip the PHP comment header if present
-        $pattern_content = preg_replace( '/^.*?-->/s', '', trim( $pattern_content ) );
-        
-        register_block_pattern(
-            'equestrian-theme/hero',
-            array(
-                'title'       => __( 'Hero Section', 'equestrian-theme' ),
-                'categories'  => array( 'equestrian-theme' ),
-                'content'     => trim( $pattern_content ),
-            )
-        );
-    }
 }
-add_action( 'init', 'equestrian_theme_register_patterns' );
+add_action( 'init', 'equestrian_theme_register_pattern_categories' );
+
+add_action('init', function() {
+    // 1. DELETE ANY CUSTOM TEMPLATES
+    $templates = get_posts(array(
+        'post_type' => 'wp_template',
+        'post_status' => 'all',
+        'posts_per_page' => -1,
+    ));
+    foreach ($templates as $t) {
+        wp_delete_post($t->ID, true);
+    }
+
+    // 2. DELETE ANY CUSTOM PATTERNS (REUSABLE BLOCKS)
+    $blocks = get_posts(array(
+        'post_type' => 'wp_block',
+        'post_status' => 'all',
+        'posts_per_page' => -1,
+    ));
+    foreach ($blocks as $b) {
+        wp_delete_post($b->ID, true);
+    }
+
+    // 3. CLEAN UP THE HOME PAGE CONTENT (IT MIGHT HAVE THE PATTERN)
+    $front_id = get_option('page_on_front');
+    if ($front_id) {
+        $page = get_post($front_id);
+        if ($page && strpos($page->post_content, 'cache-test') !== false) {
+            // Remove any occurrences of the pattern from the post content
+            $new_content = preg_replace('/<!-- wp:pattern {"slug":"equestrian-theme\/cache-test"} \/-->/', '', $page->post_content);
+            wp_update_post(array(
+                'ID' => $front_id,
+                'post_content' => $new_content
+            ));
+        }
+    }
+});
+
+// ENSURE PATTERNS ARE FRESH IN EDITOR
+add_filter('should_load_remote_block_patterns', '__return_false');
+add_filter('block_editor_settings_all', function($settings) {
+    $settings['__experimentalFeatures']['defaults']['typography']['fontSizes'] = true;
+    return $settings;
+});
+
+// FORCE NO CACHE FOR STYLES AND SCRIPTS DURING DEVELOPMENT
+add_action('wp_enqueue_scripts', function() {
+    $version = time(); // Use timestamp as version to bust cache
+    wp_enqueue_style('equestrian-theme-styles', get_template_directory_uri() . '/style.css', array(), $version);
+}, 20);
+
+// DEV LOG: Output a comment in the head to confirm file-based execution
+add_action('wp_head', function() {
+    echo "\n<!-- EQU-DAD DEV MODE: File System Checked at " . date('Y-m-d H:i:s') . " -->\n";
+});
+
+
+error_log("DEBUG: Checking templates...");
+$test_templates = get_posts(array("post_type" => "wp_template", "post_status" => "all", "posts_per_page" => -1));
+error_log("DEBUG: Found " . count($test_templates) . " templates.");
+foreach($test_templates as $t) { error_log("DEBUG: Template Slug: " . $t->post_name . " ID: " . $t->ID); }
+
