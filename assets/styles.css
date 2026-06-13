@@ -473,3 +473,10 @@ a { color: inherit; text-decoration: none; }
     display: grid;
 }
 
+/* ---- QUOTE ---- */
+.quote-band { padding: 84px 0; text-align: center; color: var(--cream); position: relative; }
+.quote-mark { width: 52px; height: 52px; color: var(--honey); opacity: .9; margin: 0 auto 20px; }
+.quote-text { font-size: clamp(24px,3.2vw,38px); line-height: 1.35; font-weight: 500; max-width: 18ch; margin: 0 auto; font-style: italic; }
+.quote-band .container { max-width: 900px; }
+.quote-cite { color: rgba(246,238,224,.65); font-weight: 600; margin-top: 24px; letter-spacing: .02em; }
+
