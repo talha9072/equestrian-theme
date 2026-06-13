@@ -200,21 +200,82 @@ a { color: inherit; text-decoration: none; }
 /* ============================================================
    LISTEN ROW (platform cards)
    ============================================================ */
-.listen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.listen-card {
-  display: flex; align-items: center; gap: 14px; padding: 18px 20px;
-  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
-  transition: all .2s; box-shadow: 0 1px 0 rgba(0,0,0,.02);
+/* ============================================================
+   LISTEN ROW (platform cards)
+   ============================================================ */
+.listen-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  margin-top: 32px;
 }
-.listen-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--cream-deep); }
-.listen-card .pico { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; flex: none; }
-.listen-card .pico svg { width: 24px; height: 24px; }
-.listen-card .plabel { font-size: 12px; color: var(--ink-faint); font-weight: 600; letter-spacing: .04em; white-space: nowrap; }
-.listen-card .pname { font-weight: 700; font-size: 16px; white-space: nowrap; }
-.pico.apple { background: rgba(153,51,204,.12); color: var(--apple); }
-.pico.spotify { background: rgba(29,185,84,.13); color: var(--spotify); }
-.pico.amazon { background: rgba(37,209,218,.14); color: #0a9aa3; }
-.pico.youtube { background: rgba(255,0,0,.1); color: var(--youtube); }
+
+.listen-card {
+  display: flex !important; 
+  align-items: center; 
+  gap: 14px; 
+  padding: 18px 20px;
+  background: var(--paper); 
+  border: 1px solid var(--line); 
+  border-radius: var(--radius);
+  transition: all .2s; 
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  height: 100%;
+}
+
+.listen-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: var(--shadow); 
+  border-color: var(--cream-deep); 
+}
+
+.listen-card .pico { 
+  width: 42px; 
+  height: 42px; 
+  border-radius: 11px; 
+  display: grid; 
+  place-items: center;
+  flex: none;
+}
+
+.listen-card .pico svg { width: 22px; height: 22px; }
+
+.listen-card .plabel { 
+  font-family: var(--font-ui);
+  font-size: 11px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: .08em; 
+  color: var(--ink-faint); 
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.listen-card .pname { 
+  font-family: var(--font-ui);
+  font-size: 16px; 
+  font-weight: 700; 
+  color: var(--ink-soft);
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.pico.apple { background: #fdf2f9; color: #d44393; }
+.pico.spotify { background: #edfcf2; color: #1ed760; }
+.pico.amazon { background: #f0f9ff; color: #00a8e1; }
+.pico.youtube { background: #fff1f0; color: #ff0000; }
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .listen-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .listen-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .listen-card { padding: 15px; }
+}
 
 /* ============================================================
    AUDIO PLAYER (mock)
@@ -354,6 +415,33 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.6;
 }
 
-/* Debug markers */
-.feature-section { border: 5px solid red !important; min-height: 200px !important; display: block !important; visibility: visible !important; }
+/* ============================================================
+   LISTEN SECTION (Gutenberg)
+   ============================================================ */
+.listen-row-section {
+    padding-top: 0 !important;
+}
+.listen-head {
+    text-align: center;
+    margin-bottom: 44px;
+}
+.listen-head .display {
+    margin-top: 12px;
+}
+.listen-card {
+    text-decoration: none !important;
+}
+.listen-card .plabel, 
+.listen-card .pname {
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    display: block;
+}
+.listen-card .pname {
+    font-weight: 700;
+}
+/* Ensure group-based flex works with our grid */
+.listen-grid.wp-block-group {
+    display: grid;
+}
 

@@ -58,6 +58,25 @@ function equestrian_theme_register_pattern_categories() {
         'equestrian-theme',
         array( 'label' => __( 'Equestrian Theme', 'equestrian-theme' ) )
     );
+
+    // Force register patterns from the patterns folder (to overcome automatic scanning issues)
+    $patterns_to_force = array('listen-section', 'feature-section', 'hero');
+    foreach ($patterns_to_force as $p) {
+        $file_path = get_template_directory() . "/patterns/{$p}.php";
+        if (file_exists($file_path)) {
+            $content = file_get_contents($file_path);
+            // Strip PHP header
+            $pattern_content = preg_replace('/<\?php[\s\S]*?\?>/', '', $content);
+            register_block_pattern(
+                "equestrian-theme/{$p}",
+                array(
+                    'title'       => ucfirst(str_replace('-', ' ', $p)),
+                    'categories'  => array( 'equestrian-theme' ),
+                    'content'     => trim($pattern_content),
+                )
+            );
+        }
+    }
 }
 add_action( 'init', 'equestrian_theme_register_pattern_categories' );
 
