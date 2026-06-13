@@ -115,7 +115,7 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none !important;
 }
 .wp-block-button.btn .wp-block-button__link {
-  padding: 13px 22px !important;
+  padding: 0 !important;
   border-radius: 999px !important;
   font-family: inherit !important;
   font-weight: inherit !important;
