@@ -409,11 +409,14 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .news-band { border-radius: var(--radius-lg); overflow: hidden; }
 .news-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 56px; }
+.news-inner .kicker { color: var(--honey) !important; font-family: var(--font-serif) !important; font-size: 14px !important; letter-spacing: 0.16em !important; margin: 0 !important; opacity: 1 !important; }
 .news-inner h2 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(30px,4vw,46px); line-height: .95; margin: 12px 0 0 !important; color: #fff !important; pointer-events: none; }
 .news-inner p { color: rgba(246,238,224,.78) !important; font-family: var(--font-serif); font-size: 18px; margin: 16px 0 0 !important; }
+.news-inner p.kicker { margin-bottom: 8px !important; }
 .news-form { display: flex !important; gap: 10px !important; background: rgba(255,255,255,.1) !important; padding: 8px !important; border-radius: 999px !important; border: 1px solid rgba(255,255,255,.16) !important; align-items: center !important; }
-.news-form p { flex: 1; background: transparent; border: none; outline: none; color: #fff !important; font-family: var(--font-ui); font-size: 15px; padding: 0 18px; margin: 0 !important; }
-.news-form .wp-block-button__link { background: var(--cream) !important; color: var(--accent) !important; border: none !important; border-radius: 999px !important; font-weight: 700 !important; padding: 10px 24px !important; font-size: 14px !important; }
+.news-form p, .news-form input { flex: 1; background: transparent; border: none; outline: none; color: #fff !important; font-family: var(--font-ui); font-size: 15px; padding: 0 18px; margin: 0 !important; }
+.news-form input::placeholder { color: rgba(255,255,255,.5); }
+.news-form .wp-block-button__link, .news-form button { background: #fff !important; color: var(--ink) !important; border: none !important; border-radius: 999px !important; font-weight: 700 !important; padding: 10px 24px !important; font-size: 14.5px !important; cursor: pointer; }
 
 /* ============================================================
    BADGE / chip
