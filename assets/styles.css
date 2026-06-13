@@ -191,10 +191,11 @@ a { color: inherit; text-decoration: none; }
 .site-footer .brand { margin-bottom: 24px; }
 .site-footer .brand-name { color: var(--cream); }
 .site-footer .brand-name small { color: rgba(246,238,224,.55); }
-.footer-blurb { color: rgba(246,238,224,.7); font-family: var(--font-serif); font-size: 16px; margin: 18px 0 24px; max-width: 32ch; line-height: 1.5; }
+.footer-blurb { color: rgba(246,238,224,.7); font-family: var(--font-serif); font-size: 16px; margin: 18px 0 24px !important; margin-left: 0 !important; max-width: 32ch; line-height: 1.5; }
 .footer-col h4 { font-family: var(--font-ui); text-transform: uppercase; letter-spacing: .16em; font-size: 12px; color: var(--honey); margin: 4px 0 16px; }
-.footer-col p { margin: 0 !important; }
-.footer-col a { display: block; color: rgba(246,238,224,.78); padding: 6px 0; font-size: 15px; text-decoration: none !important; transition: color .2s; }
+.footer-col { margin-left: 0 !important; margin-right: 0 !important; max-width: none !important; }
+.footer-col p { margin: 0 !important; text-align: left !important; }
+.footer-col a { display: block; color: rgba(246,238,224,.78); padding: 6px 0; font-size: 15px; text-decoration: none !important; transition: color .2s; text-align: left !important; }
 .footer-col a:hover { color: #fff; }
 .footer-listen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
 .footer-listen-grid p { margin: 0 !important; }
@@ -213,6 +214,9 @@ a { color: inherit; text-decoration: none; }
 
 .footer-bottom { 
   margin-top: 52px; 
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
   padding-top: 24px; 
   border-top: 1px solid rgba(255,255,255,.12); 
   display: flex !important; 
@@ -231,7 +235,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) {
   .footer-grid { grid-template-columns: 1fr; gap: 40px; }
   .footer-listen-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-bottom { flex-direction: column; text-align: left; align-items: flex-start; gap: 12px; }
+  .site-footer { text-align: left; }
+  .site-footer .brand { justify-content: flex-start; }
 }
 
 /* ============================================================
@@ -460,7 +466,11 @@ a { color: inherit; text-decoration: none; }
   .themes-grid { grid-template-columns: 1fr 1fr; }
   .product-grid, .product-grid.four { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .news-inner { grid-template-columns: 1fr; gap: 28px; padding: 40px; }
+  .news-inner { grid-template-columns: 1fr; gap: 28px; padding: 40px; text-align: left !important; }
+  .news-inner .news-text { text-align: left !important; }
+  .footer-bottom { justify-content: flex-start !important; gap: 24px; }
+  .site-footer .brand { justify-content: flex-start !important; }
+  .footer-grid > * { margin-left: 0 !important; margin-right: 0 !important; text-align: left !important; }
 }
 @media (max-width: 720px) {
   .main-nav, .listen-mini { display: none; }
@@ -469,7 +479,12 @@ a { color: inherit; text-decoration: none; }
   .ep-row { grid-template-columns: auto 1fr; }
   .ep-side { display: none; }
   
-  .news-inner { padding: 32px 24px; }
+  .site-footer, .site-footer .container, .footer-grid { text-align: left !important; align-items: flex-start !important; justify-content: flex-start !important; }
+  .footer-grid > * { text-align: left !important; margin-left: 0 !important; margin-right: 0 !important; }
+  
+  .news-inner { padding: 32px 24px; text-align: left !important; }
+  .news-inner .news-text { text-align: left !important; }
+  
   .news-form { flex-direction: column; background: transparent !important; border: none !important; padding: 0 !important; gap: 12px !important; }
   .news-form input { background: rgba(255,255,255,.1) !important; border: 1px solid rgba(255,255,255,.16) !important; padding: 14px 20px !important; border-radius: 999px !important; width: 100%; box-sizing: border-box; }
   .news-form button { width: 100%; padding: 14px !important; }
