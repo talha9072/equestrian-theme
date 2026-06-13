@@ -6,11 +6,11 @@
  * Description: Features grid with icons, headings and descriptions.
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"section","style":{"spacing":{"padding":{"top":"92px","bottom":"92px"}}},"backgroundColor":"cream-deep","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"section","className":"section","style":{"spacing":{"padding":{"top":"92px","bottom":"92px"}}},"backgroundColor":"cream-deep"} -->
 <section class="wp-block-group section has-cream-deep-background-color has-background" style="padding-top:92px;padding-bottom:92px">
-    <!-- wp:group {"className":"container","layout":{"type":"constrained"}} -->
+    <!-- wp:group {"className":"container"} -->
     <div class="wp-block-group container">
-        <!-- wp:group {"className":"section-head center","layout":{"type":"constrained"}} -->
+        <!-- wp:group {"className":"section-head center"} -->
         <div class="wp-block-group section-head center">
             <!-- wp:paragraph {"className":"kicker"} -->
             <p class="kicker">What we talk about</p>
@@ -26,9 +26,9 @@
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"className":"themes-grid","layout":{"type":"grid","columnCount":3}} -->
+        <!-- wp:group {"className":"themes-grid"} -->
         <div class="wp-block-group themes-grid">
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C.8 8.5 2.5 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.5 0 5.2 3.5 3.5 7-2.5 4.5-5.5 9-5.5 9Z"/></svg></div>
@@ -42,7 +42,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
@@ -56,7 +56,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4ZM6 5H3v2a3 3 0 0 0 3 3M18 5h3v2a3 3 0 0 1-3 3"/></svg></div>
@@ -70,7 +70,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3-6 5-9 8-9s5 3 8 9M12 9V4M9 6l3-2 3 2"/></svg></div>
@@ -84,7 +84,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 6a3 3 0 0 1 0 6M18 20a6 6 0 0 0-3-5.2"/></svg></div>
@@ -98,7 +98,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"theme-card","layout":{"type":"constrained"}} -->
+            <!-- wp:group {"className":"theme-card"} -->
             <div class="wp-block-group theme-card">
                 <!-- wp:html -->
                 <div class="theme-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2Z"/></svg></div>
