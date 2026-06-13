@@ -185,26 +185,54 @@ a { color: inherit; text-decoration: none; }
 .eyebrow-row { display: flex; align-items: center; gap: 12px; justify-content: space-between; margin-bottom: 44px; flex-wrap: wrap; }
 .eyebrow-row h2 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(30px,4vw,46px); line-height: .95; margin: 6px 0 0; }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* ============================================================ */
 .site-footer { color: var(--cream); padding: 76px 0 36px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 40px; }
+.site-footer .brand { margin-bottom: 24px; }
 .site-footer .brand-name { color: var(--cream); }
 .site-footer .brand-name small { color: rgba(246,238,224,.55); }
-.footer-blurb { color: rgba(246,238,224,.7); font-family: var(--font-serif); font-size: 16px; margin: 18px 0 0; max-width: 30ch; }
+.footer-blurb { color: rgba(246,238,224,.7); font-family: var(--font-serif); font-size: 16px; margin: 18px 0 24px; max-width: 32ch; line-height: 1.5; }
 .footer-col h4 { font-family: var(--font-ui); text-transform: uppercase; letter-spacing: .16em; font-size: 12px; color: var(--honey); margin: 4px 0 16px; }
-.footer-col a { display: block; color: rgba(246,238,224,.78); padding: 6px 0; font-size: 15px; }
+.footer-col p { margin: 0 !important; }
+.footer-col a { display: block; color: rgba(246,238,224,.78); padding: 6px 0; font-size: 15px; text-decoration: none !important; transition: color .2s; }
 .footer-col a:hover { color: #fff; }
-.footer-listen { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 4px; }
-.footer-listen a {
-  display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; border-radius: 10px;
+.footer-listen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+.footer-listen-grid p { margin: 0 !important; }
+.footer-listen-grid a {
+  display: flex; align-items: center; justify-content: flex-start; gap: 8px;
+  padding: 10px 14px; border-radius: 8px;
   background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-  font-size: 13.5px; font-weight: 600; color: var(--cream);
+  font-size: 13px; font-weight: 600; color: var(--cream);
+  text-decoration: none !important; transition: all .2s;
 }
-.footer-listen a:hover { background: rgba(255,255,255,.14); }
-.footer-listen svg { width: 16px; height: 16px; }
-.footer-bottom { margin-top: 52px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: rgba(246,238,224,.55); font-size: 13.5px; }
+.footer-listen-grid a svg { width: 16px; height: 16px; flex: none; }
+.footer-listen-grid a:hover { background: rgba(255,255,255,.14); color: #fff; }
+
+.footer-col .wp-block-navigation { padding: 0; }
+.footer-col .wp-block-navigation .wp-block-navigation-item { margin-bottom: 8px; }
+
+.footer-bottom { 
+  margin-top: 52px; 
+  padding-top: 24px; 
+  border-top: 1px solid rgba(255,255,255,.12); 
+  display: flex !important; 
+  justify-content: space-between !important; 
+  gap: 16px; 
+  flex-wrap: wrap; 
+  color: rgba(246,238,224,.55); 
+  font-size: 13.5px; 
+}
+.footer-bottom p { margin: 0 !important; }
+
+@media (max-width: 980px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-listen-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+}
 
 /* ============================================================
    LISTEN ROW (platform cards)
@@ -436,10 +464,15 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 720px) {
   .main-nav, .listen-mini { display: none; }
-  .section { padding: 64px 0; }
+  .section { padding: 48px 0; }
   .themes-grid, .product-grid, .product-grid.four, .footer-grid { grid-template-columns: 1fr; }
   .ep-row { grid-template-columns: auto 1fr; }
   .ep-side { display: none; }
+  
+  .news-inner { padding: 32px 24px; }
+  .news-form { flex-direction: column; background: transparent !important; border: none !important; padding: 0 !important; gap: 12px !important; }
+  .news-form input { background: rgba(255,255,255,.1) !important; border: 1px solid rgba(255,255,255,.16) !important; padding: 14px 20px !important; border-radius: 999px !important; width: 100%; box-sizing: border-box; }
+  .news-form button { width: 100%; padding: 14px !important; }
 }
 
 /* ---- feature section ---- */
