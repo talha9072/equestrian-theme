@@ -373,29 +373,47 @@ a { color: inherit; text-decoration: none; }
 .product {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
   overflow: hidden; transition: all .2s;
+  display: flex; flex-direction: column;
+  width: 100%;
 }
 .product:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-.product .pimg { aspect-ratio: 1/1; background: var(--cream-deep); position: relative; }
-.product .pimg image-slot { width: 100%; height: 100%; }
-.product .tag { position: absolute; top: 14px; left: 14px; z-index: 2; background: var(--slate-ink); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px; }
-.product .pbody { padding: 20px 22px 24px; }
-.product .pcat { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
-.product h3 { font-family: var(--font-serif); font-weight: 600; font-size: 20px; margin: 5px 0 0; }
-.product .prow { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
-.product .price { font-family: var(--font-ui); font-weight: 800; font-size: 20px; }
-.product .add { border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font-weight: 700; font-size: 13.5px; padding: 9px 16px; border-radius: 999px; cursor: pointer; transition: all .18s; font-family: var(--font-ui); }
-.product .add:hover { background: var(--ink); color: var(--cream); }
+.product .pimg { width: 100%; aspect-ratio: 1/1; background: var(--cream-deep); position: relative; overflow: hidden; }
+.product .pimg figure { margin: 0; width: 100%; height: 100%; }
+.product .pimg img { width: 100%; height: 100%; object-fit: cover; }
+.product .tag { position: absolute !important; top: 14px; left: 14px; z-index: 2; background: var(--slate-ink); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px; margin: 0 !important; }
+.product .pbody { padding: 22px 22px 26px; flex: 1; display: flex; flex-direction: column; align-items: flex-start !important; text-align: left !important; margin: 0 !important; }
+.product .pcat { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px !important; text-align: left !important; width: 100%; }
+.product h3 { font-family: var(--font-serif); font-weight: 600; font-size: 20px; margin: 0 0 16px !important; line-height: 1.3; text-align: left !important; width: 100%; }
+.product .prow { display: flex !important; align-items: center !important; justify-content: space-between !important; margin-top: auto !important; gap: 16px !important; width: 100% !important; }
+.product .price { font-family: var(--font-ui); font-weight: 800; font-size: 20px; margin: 0 !important; white-space: nowrap; text-align: left !important; }
+.product .add .wp-block-button__link { 
+  border: 1.5px solid var(--ink) !important; 
+  background: transparent !important; 
+  color: var(--ink) !important; 
+  font-weight: 700 !important; 
+  font-size: 13.5px !important; 
+  padding: 9px 16px !important; 
+  border-radius: 999px !important; 
+  cursor: pointer !important; 
+  transition: all .18s !important; 
+  font-family: var(--font-ui) !important; 
+  text-decoration: none !important;
+}
+.product .add .wp-block-button__link:hover { 
+  background: var(--ink) !important; 
+  color: var(--cream) !important; 
+}
 
 /* ============================================================
    NEWSLETTER
    ============================================================ */
 .news-band { border-radius: var(--radius-lg); overflow: hidden; }
 .news-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 56px; }
-.news-inner h2 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(30px,4vw,46px); line-height: .95; margin: 12px 0 0; color: #fff; }
-.news-inner p { color: rgba(246,238,224,.78); font-family: var(--font-serif); font-size: 18px; margin: 16px 0 0; }
-.news-form { display: flex; gap: 10px; background: rgba(255,255,255,.1); padding: 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); }
-.news-form input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-family: var(--font-ui); font-size: 15px; padding: 0 18px; }
-.news-form input::placeholder { color: rgba(246,238,224,.55); }
+.news-inner h2 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(30px,4vw,46px); line-height: .95; margin: 12px 0 0 !important; color: #fff !important; pointer-events: none; }
+.news-inner p { color: rgba(246,238,224,.78) !important; font-family: var(--font-serif); font-size: 18px; margin: 16px 0 0 !important; }
+.news-form { display: flex !important; gap: 10px !important; background: rgba(255,255,255,.1) !important; padding: 8px !important; border-radius: 999px !important; border: 1px solid rgba(255,255,255,.16) !important; align-items: center !important; }
+.news-form p { flex: 1; background: transparent; border: none; outline: none; color: #fff !important; font-family: var(--font-ui); font-size: 15px; padding: 0 18px; margin: 0 !important; }
+.news-form .wp-block-button__link { background: var(--cream) !important; color: var(--accent) !important; border: none !important; border-radius: 999px !important; font-weight: 700 !important; padding: 10px 24px !important; font-size: 14px !important; }
 
 /* ============================================================
    BADGE / chip
