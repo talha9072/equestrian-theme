@@ -60,7 +60,7 @@ function equestrian_theme_register_pattern_categories() {
     );
 
     // Force register patterns from the patterns folder (to overcome automatic scanning issues)
-    $patterns_to_force = array('listen-section', 'feature-section', 'hero');
+    $patterns_to_force = array('listen-section', 'feature-section', 'hero', 'about-dad');
     foreach ($patterns_to_force as $p) {
         $file_path = get_template_directory() . "/patterns/{$p}.php";
         if (file_exists($file_path)) {
