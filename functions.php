@@ -154,19 +154,36 @@ function equestrian_redirect_episodes_page() {
 add_action( 'template_redirect', 'equestrian_redirect_episodes_page' );
 
 /**
- * Shortcodes used inside the Episode archive Query Loop to output
+ * Dynamic blocks used inside the Episode archive Query Loop to output
  * per-post custom fields (episode_number, duration) and the play link.
+ * These read the postId from block context, unlike shortcodes/global
+ * $post which is not reliably updated per row inside a Query Loop.
  */
-add_shortcode( 'episode_number_label', function () {
-    $num = get_post_meta( get_the_ID(), 'episode_number', true );
-    return $num ? '<p class="ep-num">EP ' . esc_html( $num ) . '</p>' : '';
-} );
+function equestrian_register_episode_query_blocks() {
+    register_block_type( 'equestrian-theme/episode-number', array(
+        'uses_context'    => array( 'postId' ),
+        'render_callback' => function ( $attributes, $content, $block ) {
+            $post_id = $block->context['postId'] ?? get_the_ID();
+            $num     = get_post_meta( $post_id, 'episode_number', true );
+            return $num ? '<p class="ep-num">EP ' . esc_html( $num ) . '</p>' : '';
+        },
+    ) );
 
-add_shortcode( 'episode_duration_label', function () {
-    $dur = get_post_meta( get_the_ID(), 'duration', true );
-    return $dur ? '<p class="dur">' . esc_html( $dur ) . '</p>' : '';
-} );
+    register_block_type( 'equestrian-theme/episode-duration', array(
+        'uses_context'    => array( 'postId' ),
+        'render_callback' => function ( $attributes, $content, $block ) {
+            $post_id = $block->context['postId'] ?? get_the_ID();
+            $dur     = get_post_meta( $post_id, 'duration', true );
+            return $dur ? '<p class="dur">' . esc_html( $dur ) . '</p>' : '';
+        },
+    ) );
 
-add_shortcode( 'episode_play_button', function () {
-    return '<a href="' . esc_url( get_permalink() ) . '" aria-label="Play episode" style="display:flex;align-items:center;justify-content:center;color:inherit;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>';
-} );
+    register_block_type( 'equestrian-theme/episode-play', array(
+        'uses_context'    => array( 'postId' ),
+        'render_callback' => function ( $attributes, $content, $block ) {
+            $post_id = $block->context['postId'] ?? get_the_ID();
+            return '<a href="' . esc_url( get_permalink( $post_id ) ) . '" aria-label="Play episode" style="display:flex;align-items:center;justify-content:center;color:inherit;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>';
+        },
+    ) );
+}
+add_action( 'init', 'equestrian_register_episode_query_blocks' );
