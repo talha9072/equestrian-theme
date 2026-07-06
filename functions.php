@@ -141,3 +141,32 @@ function equestrian_register_episode_taxonomy() {
     register_taxonomy( 'episode_category', array( 'episode' ), $args );
 }
 add_action( 'init', 'equestrian_register_episode_taxonomy' );
+
+/**
+ * Send /episodes/ (old static page) to the real Episode archive.
+ */
+function equestrian_redirect_episodes_page() {
+    if ( is_page( 'episodes' ) ) {
+        wp_redirect( get_post_type_archive_link( 'episode' ), 301 );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'equestrian_redirect_episodes_page' );
+
+/**
+ * Shortcodes used inside the Episode archive Query Loop to output
+ * per-post custom fields (episode_number, duration) and the play link.
+ */
+add_shortcode( 'episode_number_label', function () {
+    $num = get_post_meta( get_the_ID(), 'episode_number', true );
+    return $num ? '<p class="ep-num">EP ' . esc_html( $num ) . '</p>' : '';
+} );
+
+add_shortcode( 'episode_duration_label', function () {
+    $dur = get_post_meta( get_the_ID(), 'duration', true );
+    return $dur ? '<p class="dur">' . esc_html( $dur ) . '</p>' : '';
+} );
+
+add_shortcode( 'episode_play_button', function () {
+    return '<a href="' . esc_url( get_permalink() ) . '" aria-label="Play episode" style="display:flex;align-items:center;justify-content:center;color:inherit;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>';
+} );
