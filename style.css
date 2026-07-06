@@ -542,8 +542,8 @@ body.hero-plank-on .hero-plank {
     margin-left: 0 !important;
 }
 .archive-hero .section-head {
-    max-width: 720px;
-    margin: 0 !important;
+   max-width: var(--maxw);
+    margin: 0 auto !important;
 }
 .archive-hero h1.display {
     font-size: clamp(40px, 6vw, 72px) !important;

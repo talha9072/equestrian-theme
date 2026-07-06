@@ -374,6 +374,7 @@ a { color: inherit; text-decoration: none; }
   display: grid !important; grid-template-columns: 48px 1fr 100px; align-items: center; gap: 24px;
   padding: 24px; background: var(--paper); border: 1px solid var(--line);
   border-radius: var(--radius); transition: all .18s; width: 100%; box-sizing: border-box;
+  margin-bottom: 20px !important;
 }
 .ep-row:hover { border-color: var(--accent-soft); box-shadow: var(--shadow); transform: translateX(2px); }
 .ep-row .ep-play { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; display: grid; place-items: center; flex: none; transition: all .18s; }
