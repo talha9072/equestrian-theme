@@ -524,8 +524,37 @@ body.hero-plank-on .hero-plank {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .display.ep-h1 {
         font-size: 2.4rem;
     }
+}
+
+/* ====================== EPISODE ARCHIVE ====================== */
+
+.archive-hero {
+    background: var(--cream-deep) !important;
+    padding: 70px 0 60px !important;
+    text-align: left !important;
+}
+.archive-hero * {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+.archive-hero .section-head {
+    max-width: 720px;
+    margin: 0 !important;
+}
+.archive-hero h1.display {
+    font-size: clamp(40px, 6vw, 72px) !important;
+    margin: 10px 0 0 !important;
+}
+.archive-hero .lead {
+    margin-top: 16px !important;
+    font-size: 17px !important;
+    color: var(--ink-soft) !important;
+}
+
+.archive-list-section {
+    background: var(--paper) !important;
 }
