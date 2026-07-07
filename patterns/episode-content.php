@@ -5,8 +5,8 @@
  * Categories: equestrian-theme
  */
 ?>
-<!-- wp:group {"tagName":"section","className":"ep-content","layout":{"type":"constrained"}} -->
-<section class="wp-block-group ep-content">
+<!-- wp:group {"tagName":"section","className":"ep-single-content","layout":{"type":"constrained"}} -->
+<section class="wp-block-group ep-single-content">
 
 	<!-- wp:group {"className":"container content-grid"} -->
 	<div class="wp-block-group container content-grid">

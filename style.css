@@ -3,7 +3,7 @@ Theme Name: Equestrian Theme
 Theme URI: https://equestriandad.co.uk/
 Author: The Dad
 Description: Warm, honest block theme for Equestrian Dad podcast.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: equestrian-theme
@@ -546,7 +546,7 @@ body.hero-plank-on .hero-plank {
 
 /* ====================== EPISODE CONTENT / SIDEBAR ====================== */
 
-.ep-content {
+.ep-single-content {
     padding: 72px 0 96px;
 }
 
