@@ -3,7 +3,7 @@ Theme Name: Equestrian Theme
 Theme URI: https://equestriandad.co.uk/
 Author: The Dad
 Description: Warm, honest block theme for Equestrian Dad podcast.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: equestrian-theme
@@ -541,6 +541,294 @@ body.hero-plank-on .hero-plank {
 
     .ep-hero-art {
         max-width: 300px;
+    }
+}
+
+/* ====================== EPISODE CONTENT / SIDEBAR ====================== */
+
+.ep-content {
+    padding: 72px 0 96px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 332px;
+    gap: 64px;
+    align-items: start;
+}
+
+/* Prose (post content) */
+.prose {
+    max-width: 68ch;
+    font-family: var(--font-serif);
+    font-size: 19px;
+    line-height: 1.72;
+    color: var(--ink);
+}
+.prose-intro {
+    font-size: 23px;
+    line-height: 1.55;
+    color: var(--ink);
+    font-weight: 500;
+}
+.prose p {
+    margin: 0 0 24px;
+}
+.prose h2 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: .01em;
+    margin: 48px 0 18px;
+}
+.prose ul,
+.prose .wp-block-list {
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+}
+.prose ul li,
+.prose .wp-block-list li {
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 12px;
+}
+.prose ul li::before,
+.prose .wp-block-list li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 13px;
+    width: 14px;
+    height: 8px;
+    border-left: 2.5px solid var(--accent);
+    border-bottom: 2.5px solid var(--accent);
+    transform: rotate(-45deg);
+}
+.pullquote,
+.prose .wp-block-quote,
+.prose .wp-block-pullquote {
+    margin: 40px 0;
+    padding: 4px 0 4px 32px;
+    border-left: 4px solid var(--accent);
+    border-radius: 0;
+}
+.pullquote blockquote,
+.prose .wp-block-quote blockquote,
+.prose .wp-block-pullquote blockquote {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.38;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--slate-deep);
+}
+.pullquote figcaption,
+.prose .wp-block-quote cite,
+.prose .wp-block-pullquote cite {
+    display: block;
+    margin-top: 16px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    color: var(--ink-faint);
+    font-weight: 600;
+    font-style: normal;
+}
+.prose-sign {
+    margin-top: 8px;
+}
+.prose-sign .hand {
+    font-family: var(--font-hand);
+    font-size: 36px;
+    color: var(--accent);
+}
+.prose-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 40px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+}
+.prose-tags .chip:hover {
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+}
+.prose-share {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 14px;
+}
+.share-btns {
+    display: flex;
+    gap: 10px;
+}
+.share-btns button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all .18s;
+}
+.share-btns button:hover {
+    background: var(--slate-ink);
+    color: #fff;
+    border-color: var(--slate-ink);
+    transform: translateY(-2px);
+}
+.share-btns svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.side-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+}
+.side-card h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 4px;
+}
+.side-card > p {
+    margin: 0 0 18px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+}
+.sub-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    margin-bottom: 9px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all .18s;
+    color: inherit;
+}
+.sub-btn:last-child {
+    margin-bottom: 0;
+}
+.sub-btn:hover {
+    border-color: var(--accent-soft);
+    background: #fff;
+    transform: translateX(2px);
+}
+.sub-btn .pico {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+}
+.sub-btn .pico svg {
+    width: 19px;
+    height: 19px;
+}
+.related {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    color: inherit;
+}
+.related:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.related:first-of-type {
+    padding-top: 4px;
+}
+.rel-art {
+    width: 56px;
+    height: 56px;
+    flex: none;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--cream-deep);
+}
+.rel-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.rel-num {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--accent-deep);
+}
+.rel-title {
+    display: block;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 2px;
+}
+.related:hover .rel-title {
+    color: var(--accent-deep);
+}
+.news-card {
+    background: var(--slate-ink);
+    border-color: var(--slate-ink);
+}
+.news-card h3,
+.news-card p {
+    color: var(--cream);
+}
+.news-card p {
+    opacity: .75;
+}
+.side-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 14.5px;
+    margin-bottom: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+.side-form input::placeholder {
+    color: rgba(246,238,224,.5);
+}
+
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .sidebar {
+        position: static;
     }
 }
 
