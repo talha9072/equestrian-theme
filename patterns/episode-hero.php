@@ -31,11 +31,26 @@
 			<!-- wp:group {"className":"ep-hero-info"} -->
 			<div class="wp-block-group ep-hero-info">
 
-				<!-- wp:group {"className":"ep-tags","layout":{"type":"flex","flexWrap":"wrap"}} -->
-				<div class="wp-block-group ep-tags">
-					<!-- wp:post-terms {"term":"episode_category","className":"chip"} /-->
+				<!-- wp:html -->
+				<div class="ep-tags">
+					<?php
+					$episode_number = get_post_meta( get_the_ID(), 'episode_number', true );
+					if ( $episode_number ) :
+						?>
+						<span class="chip accent">Episode <?php echo esc_html( $episode_number ); ?></span>
+						<?php
+					endif;
+					$episode_terms = get_the_terms( get_the_ID(), 'episode_category' );
+					if ( $episode_terms && ! is_wp_error( $episode_terms ) ) :
+						foreach ( $episode_terms as $episode_term ) :
+							?>
+							<span class="chip"><?php echo esc_html( $episode_term->name ); ?></span>
+							<?php
+						endforeach;
+					endif;
+					?>
 				</div>
-				<!-- /wp:group -->
+				<!-- /wp:html -->
 
 				<!-- wp:post-title {"level":1,"className":"display ep-h1"} /-->
 
@@ -45,8 +60,8 @@
 				<div class="ep-byline">
 					<span class="byline-av"><span>ED</span></span>
 					<div>
-						<strong>The Equestrian Dad</strong><br>
-						<span>Published • <?php echo get_post_meta(get_the_ID(), 'duration', true); ?></span>
+						<strong>The Equestrian Dad</strong>
+						<span>Published <?php echo esc_html( get_the_date( 'j F Y' ) ); ?> · <?php echo esc_html( get_post_meta( get_the_ID(), 'duration', true ) ); ?></span>
 					</div>
 				</div>
 				<!-- /wp:html -->
