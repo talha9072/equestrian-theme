@@ -19,16 +19,16 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"ep-hero-grid","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<!-- wp:group {"className":"ep-hero-grid"} -->
 		<div class="wp-block-group ep-hero-grid">
 
-			<!-- wp:group {"className":"ep-hero-art","layout":{"type":"constrained"}} -->
+			<!-- wp:group {"className":"ep-hero-art"} -->
 			<div class="wp-block-group ep-hero-art">
 				<!-- wp:post-featured-image {"className":"ep-art"} /-->
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:group {"className":"ep-hero-info","layout":{"type":"constrained"}} -->
+			<!-- wp:group {"className":"ep-hero-info"} -->
 			<div class="wp-block-group ep-hero-info">
 
 				<!-- wp:group {"className":"ep-tags","layout":{"type":"flex","flexWrap":"wrap"}} -->

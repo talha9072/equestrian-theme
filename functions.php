@@ -5,13 +5,13 @@
 
 // Enqueue styles and scripts
 function equestrian_theme_scripts() {
-    wp_enqueue_style( 'equestrian-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
-    wp_enqueue_style( 'equestrian-theme-assets', get_template_directory_uri() . '/assets/styles.css', array(), '1.0.0' );
-    wp_enqueue_style( 'equestrian-theme-header', get_template_directory_uri() . '/header.css', array(), '1.0.0' );
+    wp_enqueue_style( 'equestrian-theme-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+    wp_enqueue_style( 'equestrian-theme-assets', get_template_directory_uri() . '/assets/styles.css', array(), filemtime( get_template_directory() . '/assets/styles.css' ) );
+    wp_enqueue_style( 'equestrian-theme-header', get_template_directory_uri() . '/header.css', array(), filemtime( get_template_directory() . '/header.css' ) );
 
     if ( ! is_admin() ) {
-        wp_enqueue_script( 'equestrian-theme-image-slot', get_template_directory_uri() . '/assets/image-slot.js', array(), '1.0.0', true );
-        wp_enqueue_script( 'equestrian-theme-app', get_template_directory_uri() . '/assets/app.js', array(), '1.0.0', true );
+        wp_enqueue_script( 'equestrian-theme-image-slot', get_template_directory_uri() . '/assets/image-slot.js', array(), filemtime( get_template_directory() . '/assets/image-slot.js' ), true );
+        wp_enqueue_script( 'equestrian-theme-app', get_template_directory_uri() . '/assets/app.js', array(), filemtime( get_template_directory() . '/assets/app.js' ), true );
     }
 }
 add_action( 'wp_enqueue_scripts', 'equestrian_theme_scripts' );

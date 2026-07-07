@@ -372,39 +372,48 @@ body.hero-plank-on .hero-plank {
 /* ====================== EPISODE HERO ====================== */
 
 .ep-hero {
-    padding: 70px 0 50px;
+    background: var(--cream-deep);
+    padding: 32px 0 60px;
 }
 
-.ep-hero .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px;
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-faint);
+    margin-bottom: 32px;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-deep);
+}
+
+.breadcrumb span {
+    opacity: .5;
 }
 
 .ep-hero-grid {
     display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 70px;
+    grid-template-columns: 320px 1fr;
+    gap: 48px;
     align-items: start;
 }
 
-.ep-hero-art img {
+.ep-hero-art img,
+.ep-hero-art .ep-art {
     width: 100%;
-    max-width: 380px;
     height: auto;
-    border-radius: 20px;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Right Content - Force Left Align */
 .ep-hero-info {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
     text-align: left !important;
-    align-items: flex-start !important;
-    justify-content: flex-start;
 }
 
 /* Sab inner elements ko bhi force left */
@@ -412,7 +421,6 @@ body.hero-plank-on .hero-plank {
     text-align: left !important;
 }
 
-/* Extra safety for title, excerpt, byline etc */
 .display.ep-h1,
 .lead.ep-standfirst,
 .ep-byline,
@@ -420,43 +428,30 @@ body.hero-plank-on .hero-plank {
 .ep-listen-row {
     text-align: left !important;
     align-self: flex-start;
-    margin: 0 !important;
 }
+
 /* Tags */
 .ep-tags {
     display: flex;
+    gap: 9px;
     flex-wrap: wrap;
-    gap: 12px;
     justify-content: flex-start;
-}
-
-.chip {
-    padding: 6px 18px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    background: #f1f1f1;
-}
-
-.chip.accent {
-    background: #e63946;
-    color: white;
+    margin: 0 0 18px;
 }
 
 /* Title */
 .display.ep-h1 {
-    font-size: 2.9rem;
-    line-height: 1.1;
-    margin: 0 0 18px 0;
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: .96;
+    margin: 0;
     text-align: left !important;
 }
 
 /* Standfirst */
 .lead.ep-standfirst {
-    font-size: 1.22rem;
-    line-height: 1.55;
-    color: #444;
-    margin: 0 0 10px 0;
+    margin: 20px 0 0;
+    max-width: 56ch;
     text-align: left !important;
 }
 
@@ -464,69 +459,88 @@ body.hero-plank-on .hero-plank {
 .ep-byline {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 13px;
     justify-content: flex-start;
+    margin: 24px 0;
 }
 
 .byline-av {
-    width: 52px;
-    height: 52px;
-    background: #222;
-    color: white;
+    width: 44px;
+    height: 44px;
+    background: var(--slate-ink);
+    color: var(--cream);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 16px;
+    flex: none;
 }
 
-/* Player */
-.player {
-    display: flex;
-    gap: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-    margin: 0;
-    width: 100%;
+.ep-byline strong {
+    display: block;
+    font-size: 15px;
+}
+
+.ep-byline span {
+    display: block;
+    font-size: 13.5px;
+    color: var(--ink-faint);
 }
 
 /* Listen Row */
 .ep-listen-row {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: 18px;
 }
 
 .ep-listen-label {
-    font-weight: 500;
-    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--ink-faint);
+    margin-right: 0;
 }
 
 .ep-listen-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 18px;
-    background: #f8f8f8;
+    padding: 9px 15px;
     border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--line);
+    font-weight: 600;
+    font-size: 14px;
     text-decoration: none;
     color: inherit;
+    transition: all .18s;
+}
+
+.ep-listen-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.ep-listen-btn svg {
+    width: 17px;
+    height: 17px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
     .ep-hero-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
 
-    .display.ep-h1 {
-        font-size: 2.4rem;
+    .ep-hero-art {
+        max-width: 300px;
     }
 }
 
