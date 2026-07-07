@@ -741,6 +741,10 @@ body.hero-plank-on .hero-plank {
     width: 34px;
     height: 34px;
     border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
 }
 .sub-btn .pico svg {
     width: 19px;

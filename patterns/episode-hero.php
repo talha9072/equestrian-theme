@@ -77,7 +77,7 @@
 					<?php endif; ?>
 					<div class="art">
 						<?php if ( $art_url ) : ?>
-							<img src="<?php echo esc_url( $art_url ); ?>" alt="" style="width:60px;height:60px;border-radius:14px;object-fit:cover;">
+							<img src="<?php echo esc_url( $art_url ); ?>" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
 						<?php endif; ?>
 					</div>
 					<div class="player-body">
