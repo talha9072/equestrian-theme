@@ -187,3 +187,114 @@ function equestrian_register_episode_query_blocks() {
     ) );
 }
 add_action( 'init', 'equestrian_register_episode_query_blocks' );
+
+/**
+ * Episode Details meta box: audio file upload + podcast platform links.
+ */
+function equestrian_add_episode_meta_box() {
+    add_meta_box(
+        'equestrian_episode_details',
+        __( 'Episode Details', 'equestrian-theme' ),
+        'equestrian_render_episode_meta_box',
+        'episode',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'equestrian_add_episode_meta_box' );
+
+function equestrian_render_episode_meta_box( $post ) {
+    wp_nonce_field( 'equestrian_save_episode_details', 'equestrian_episode_details_nonce' );
+
+    $audio_file    = get_post_meta( $post->ID, '_episode_audio_file', true );
+    $apple_link    = get_post_meta( $post->ID, '_episode_apple_link', true );
+    $spotify_link  = get_post_meta( $post->ID, '_episode_spotify_link', true );
+    $youtube_link  = get_post_meta( $post->ID, '_episode_youtube_link', true );
+    ?>
+    <p>
+        <label for="episode_audio_file"><strong><?php esc_html_e( 'Audio File (MP3/MP4)', 'equestrian-theme' ); ?></strong></label><br>
+        <input type="text" id="episode_audio_file" name="episode_audio_file" class="widefat" value="<?php echo esc_attr( $audio_file ); ?>" placeholder="<?php esc_attr_e( 'No file selected', 'equestrian-theme' ); ?>" readonly>
+        <button type="button" class="button" id="episode_audio_file_button"><?php esc_html_e( 'Select Audio File', 'equestrian-theme' ); ?></button>
+        <button type="button" class="button" id="episode_audio_file_remove" <?php echo $audio_file ? '' : 'style="display:none"'; ?>><?php esc_html_e( 'Remove', 'equestrian-theme' ); ?></button>
+    </p>
+    <p>
+        <label for="episode_apple_link"><strong><?php esc_html_e( 'Apple Podcasts Link', 'equestrian-theme' ); ?></strong></label><br>
+        <input type="url" id="episode_apple_link" name="episode_apple_link" class="widefat" value="<?php echo esc_attr( $apple_link ); ?>" placeholder="https://podcasts.apple.com/...">
+    </p>
+    <p>
+        <label for="episode_spotify_link"><strong><?php esc_html_e( 'Spotify Link', 'equestrian-theme' ); ?></strong></label><br>
+        <input type="url" id="episode_spotify_link" name="episode_spotify_link" class="widefat" value="<?php echo esc_attr( $spotify_link ); ?>" placeholder="https://open.spotify.com/...">
+    </p>
+    <p>
+        <label for="episode_youtube_link"><strong><?php esc_html_e( 'YouTube Link', 'equestrian-theme' ); ?></strong></label><br>
+        <input type="url" id="episode_youtube_link" name="episode_youtube_link" class="widefat" value="<?php echo esc_attr( $youtube_link ); ?>" placeholder="https://youtube.com/...">
+    </p>
+    <script>
+    jQuery(function ($) {
+        var frame;
+        $('#episode_audio_file_button').on('click', function (e) {
+            e.preventDefault();
+            if (frame) { frame.open(); return; }
+            frame = wp.media({
+                title: '<?php echo esc_js( __( 'Select Audio File', 'equestrian-theme' ) ); ?>',
+                library: { type: [ 'audio', 'video' ] },
+                button: { text: '<?php echo esc_js( __( 'Use this file', 'equestrian-theme' ) ); ?>' },
+                multiple: false
+            });
+            frame.on('select', function () {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#episode_audio_file').val(attachment.url);
+                $('#episode_audio_file_remove').show();
+            });
+            frame.open();
+        });
+        $('#episode_audio_file_remove').on('click', function (e) {
+            e.preventDefault();
+            $('#episode_audio_file').val('');
+            $(this).hide();
+        });
+    });
+    </script>
+    <?php
+}
+
+function equestrian_save_episode_meta_box( $post_id ) {
+    if ( ! isset( $_POST['equestrian_episode_details_nonce'] ) ||
+        ! wp_verify_nonce( $_POST['equestrian_episode_details_nonce'], 'equestrian_save_episode_details' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    $fields = array(
+        'episode_audio_file'   => '_episode_audio_file',
+        'episode_apple_link'   => '_episode_apple_link',
+        'episode_spotify_link' => '_episode_spotify_link',
+        'episode_youtube_link' => '_episode_youtube_link',
+    );
+
+    foreach ( $fields as $input_name => $meta_key ) {
+        if ( isset( $_POST[ $input_name ] ) ) {
+            $value = ( 'episode_audio_file' === $input_name )
+                ? esc_url_raw( trim( wp_unslash( $_POST[ $input_name ] ) ) )
+                : esc_url_raw( trim( wp_unslash( $_POST[ $input_name ] ) ) );
+            update_post_meta( $post_id, $meta_key, $value );
+        }
+    }
+}
+add_action( 'save_post_episode', 'equestrian_save_episode_meta_box' );
+
+function equestrian_enqueue_episode_admin_media( $hook ) {
+    if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ) {
+        return;
+    }
+    if ( 'episode' !== get_current_screen()->post_type ) {
+        return;
+    }
+    wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'equestrian_enqueue_episode_admin_media' );

@@ -17,11 +17,43 @@
     const bar = player.querySelector('.progress');
     const cur = player.querySelector('[data-cur]');
     const dur = player.querySelector('[data-dur]');
-    const total = parseInt(player.dataset.dur || '2730', 10); // seconds
-    let pos = total * 0.34, playing = false, timer = null;
+    const audioEl = player.querySelector('.player-audio');
 
     const PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
     const PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+
+    if (audioEl) {
+      /* ---- real audio playback ---- */
+      function renderReal() {
+        const total = audioEl.duration || 0;
+        const pos = audioEl.currentTime || 0;
+        const pct = total ? Math.max(0, Math.min(100, (pos / total) * 100)) : 0;
+        if (fill) fill.style.width = pct + '%';
+        if (knob) knob.style.left = pct + '%';
+        if (cur) cur.textContent = fmt(pos);
+        if (dur) dur.textContent = fmt(total);
+      }
+      audioEl.addEventListener('loadedmetadata', renderReal);
+      audioEl.addEventListener('timeupdate', renderReal);
+      audioEl.addEventListener('play', function () { if (btn) btn.innerHTML = PAUSE; });
+      audioEl.addEventListener('pause', function () { if (btn) btn.innerHTML = PLAY; });
+      audioEl.addEventListener('ended', function () { if (btn) btn.innerHTML = PLAY; });
+      if (btn) btn.addEventListener('click', function () {
+        audioEl.paused ? audioEl.play() : audioEl.pause();
+      });
+      if (bar) bar.addEventListener('click', function (e) {
+        const r = bar.getBoundingClientRect();
+        const total = audioEl.duration || 0;
+        audioEl.currentTime = ((e.clientX - r.left) / r.width) * total;
+        renderReal();
+      });
+      renderReal();
+      return;
+    }
+
+    /* ---- mock progress demo (no audio file uploaded yet) ---- */
+    const total = parseInt(player.dataset.dur || '2730', 10); // seconds
+    let pos = total * 0.34, playing = false, timer = null;
 
     function render() {
       const pct = Math.max(0, Math.min(100, (pos / total) * 100));
