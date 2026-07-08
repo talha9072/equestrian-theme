@@ -16,7 +16,7 @@
             <!-- /wp:group -->
             
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"about-photo"} -->
-            <figure class="wp-block-image size-large about-photo"><img src="/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2391-800x842-1.jpg" alt="Robert and Timothy"/></figure>
+            <figure class="wp-block-image size-large about-photo"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-placeholder.jpg' ); ?>" alt="Robert and Timothy"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:group -->

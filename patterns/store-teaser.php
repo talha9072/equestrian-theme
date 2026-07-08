@@ -43,7 +43,7 @@
                     <p class="tag">Bestseller</p>
                     <!-- /wp:paragraph -->
                     <!-- wp:image -->
-                    <figure class="wp-block-image"><img src="http://equestrian-dad.local/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2391-800x842-2.jpg" alt=""/></figure>
+                    <figure class="wp-block-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/product-placeholder.jpg' ); ?>" alt=""/></figure>
                     <!-- /wp:image -->
                 </div>
                 <!-- /wp:group -->
@@ -80,7 +80,7 @@
                 <!-- wp:group {"className":"pimg","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group pimg">
                     <!-- wp:image -->
-                    <figure class="wp-block-image"><img src="http://equestrian-dad.local/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2391-800x842-2.jpg" alt=""/></figure>
+                    <figure class="wp-block-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/product-placeholder.jpg' ); ?>" alt=""/></figure>
                     <!-- /wp:image -->
                 </div>
                 <!-- /wp:group -->
@@ -120,7 +120,7 @@
                     <p class="tag">New</p>
                     <!-- /wp:paragraph -->
                     <!-- wp:image -->
-                    <figure class="wp-block-image"><img src="http://equestrian-dad.local/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2391-800x842-2.jpg" alt=""/></figure>
+                    <figure class="wp-block-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/product-placeholder.jpg' ); ?>" alt=""/></figure>
                     <!-- /wp:image -->
                 </div>
                 <!-- /wp:group -->

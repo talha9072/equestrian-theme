@@ -88,7 +88,7 @@
 
       <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"hero-photo"} -->
       <figure class="wp-block-image size-full hero-photo">
-        <img src="http://equestrian-dad.local/wp-content/uploads/2026/06/ROBERT_TIMOTHY_CHLAK-2344-1200x1500-2.jpg" alt="The Equestrian Dad Podcast Cover"/>
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-placeholder.jpg' ); ?>" alt="The Equestrian Dad Podcast Cover"/>
       </figure>
       <!-- /wp:image -->
 
