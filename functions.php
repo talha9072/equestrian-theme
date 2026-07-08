@@ -298,3 +298,169 @@ function equestrian_enqueue_episode_admin_media( $hook ) {
     wp_enqueue_media();
 }
 add_action( 'admin_enqueue_scripts', 'equestrian_enqueue_episode_admin_media' );
+
+/**
+ * ============================================================
+ * WooCommerce integration
+ * ============================================================
+ * The theme provides its own block templates (archive-product.html,
+ * single-product.html) and a "product-card" dynamic block styled to
+ * match the site's existing .product/.pimg/.pbody design system
+ * (see the "Wear the yard" section on the homepage). None of this
+ * does anything until the WooCommerce plugin is installed & active.
+ */
+
+function equestrian_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'equestrian_woocommerce_support' );
+
+// Our block templates provide the page structure, so drop WooCommerce's default wrapper markup.
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+// Match the site's copy ("Add to basket" rather than "Add to cart").
+add_filter( 'woocommerce_product_add_to_cart_text', function () {
+    return __( 'Add to basket', 'equestrian-theme' );
+} );
+add_filter( 'woocommerce_product_single_add_to_cart_text', function () {
+    return __( 'Add to basket', 'equestrian-theme' );
+} );
+
+/**
+ * Send /store/ (the nav link URL baked into the header/footer template parts)
+ * to the real WooCommerce shop page. No "store" page exists in the database —
+ * this is a plain URL redirect, not a page-based one, so it must run before
+ * WordPress 404s the request.
+ */
+function equestrian_redirect_store_page() {
+    if ( ! function_exists( 'wc_get_page_permalink' ) ) {
+        return;
+    }
+    $path = trim( wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) ?? '', '/' );
+    if ( 'store' === $path ) {
+        wp_redirect( wc_get_page_permalink( 'shop' ), 301 );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'equestrian_redirect_store_page' );
+
+/**
+ * Dynamic "product-card" block, used inside a Query Loop (postType: product)
+ * on the Shop page. Reads postId from block context so it always renders the
+ * correct product per loop iteration, mirroring the equestrian-theme/episode-*
+ * blocks used for the Episode archive.
+ */
+function equestrian_register_product_card_block() {
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        return;
+    }
+
+    register_block_type(
+        'equestrian-theme/product-card',
+        array(
+            'uses_context'    => array( 'postId' ),
+            'render_callback' => function ( $attributes, $content, $block ) {
+                $post_id = $block->context['postId'] ?? get_the_ID();
+                $product = wc_get_product( $post_id );
+                if ( ! $product ) {
+                    return '';
+                }
+
+                $badge = '';
+                if ( $product->is_on_sale() ) {
+                    $badge = 'Sale';
+                } elseif ( $product->is_featured() ) {
+                    $badge = 'Bestseller';
+                }
+
+                $terms    = get_the_terms( $post_id, 'product_cat' );
+                $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '';
+                $permalink = get_permalink( $post_id );
+                $image     = wp_get_attachment_image( $product->get_image_id(), 'medium' );
+
+                ob_start();
+                ?>
+				<div class="product">
+					<a href="<?php echo esc_url( $permalink ); ?>" class="pimg">
+						<?php if ( $badge ) : ?>
+							<span class="tag"><?php echo esc_html( $badge ); ?></span>
+						<?php endif; ?>
+						<?php echo $image; ?>
+					</a>
+					<div class="pbody">
+						<?php if ( $cat_name ) : ?>
+							<span class="pcat"><?php echo esc_html( $cat_name ); ?></span>
+						<?php endif; ?>
+						<h3><a href="<?php echo esc_url( $permalink ); ?>" style="color:inherit;text-decoration:none;"><?php echo esc_html( $product->get_name() ); ?></a></h3>
+						<div class="prow">
+							<span class="price"><?php echo $product->get_price_html(); ?></span>
+							<span class="add"><?php woocommerce_template_loop_add_to_cart(); ?></span>
+						</div>
+					</div>
+				</div>
+				<?php
+                return ob_get_clean();
+            },
+        )
+    );
+}
+add_action( 'init', 'equestrian_register_product_card_block' );
+
+/**
+ * Dynamic "shop-filters" block: real product-category chips + result count,
+ * used at the top of the Shop page and category archives.
+ */
+function equestrian_register_shop_filters_block() {
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        return;
+    }
+
+    register_block_type(
+        'equestrian-theme/shop-filters',
+        array(
+            'render_callback' => function () {
+                if ( ! function_exists( 'wc_get_page_permalink' ) ) {
+                    return '';
+                }
+
+                $shop_url     = wc_get_page_permalink( 'shop' );
+                $current_term = is_tax( 'product_cat' ) ? get_queried_object() : null;
+                $terms        = get_terms(
+                    array(
+                        'taxonomy'   => 'product_cat',
+                        'hide_empty' => true,
+                    )
+                );
+
+                global $wp_query;
+                $count = isset( $wp_query->found_posts ) ? (int) $wp_query->found_posts : 0;
+
+                ob_start();
+                ?>
+				<div class="filter-row">
+					<div class="filter-chips">
+						<a href="<?php echo esc_url( $shop_url ); ?>" class="fchip<?php echo ! $current_term ? ' active' : ''; ?>">All</a>
+						<?php
+						if ( ! is_wp_error( $terms ) ) :
+							foreach ( $terms as $term ) :
+								$is_active = ( $current_term && ! is_wp_error( $current_term ) && $current_term->term_id === $term->term_id );
+								?>
+								<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="fchip<?php echo $is_active ? ' active' : ''; ?>"><?php echo esc_html( $term->name ); ?></a>
+								<?php
+							endforeach;
+						endif;
+						?>
+					</div>
+					<span class="filter-count"><strong><?php echo esc_html( $count ); ?></strong> products</span>
+				</div>
+				<?php
+                return ob_get_clean();
+            },
+        )
+    );
+}
+add_action( 'init', 'equestrian_register_shop_filters_block' );

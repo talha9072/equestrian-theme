@@ -3,7 +3,7 @@ Theme Name: Equestrian Theme
 Theme URI: https://equestriandad.co.uk/
 Author: The Dad
 Description: Warm, honest block theme for Equestrian Dad podcast.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: equestrian-theme
@@ -833,6 +833,219 @@ body.hero-plank-on .hero-plank {
     }
     .sidebar {
         position: static;
+    }
+}
+
+/* ====================== SHOP ====================== */
+
+.store-hero {
+    background: var(--cream-deep);
+    padding: 56px 0 40px;
+}
+.store-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+.store-hero-inner > .wp-block-group:first-child {
+    flex: 1 1 420px;
+}
+.store-h1 {
+    font-size: clamp(40px, 6vw, 72px) !important;
+    margin: 10px 0 0 !important;
+}
+.store-hero .lead {
+    margin-top: 16px !important;
+    max-width: 48ch;
+}
+.store-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 26px 30px;
+    border-radius: var(--radius-lg);
+    color: var(--cream);
+    flex: 1 1 320px;
+    max-width: 380px;
+}
+.store-hero-note svg {
+    width: 40px;
+    height: 40px;
+    flex: none;
+    color: var(--honey);
+}
+.store-hero-note p {
+    margin: 0 !important;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* Filter row */
+.filter-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.fchip {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all .18s;
+    text-decoration: none;
+}
+.fchip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+.fchip.active {
+    background: var(--slate-ink);
+    border-color: var(--slate-ink);
+    color: var(--cream);
+}
+.filter-count {
+    color: var(--ink-faint);
+    font-size: 14.5px;
+}
+.filter-count strong {
+    color: var(--ink);
+}
+
+/* Real WooCommerce add-to-cart buttons, styled to match .add .wp-block-button__link */
+.product .add a.button,
+.product .add .add_to_cart_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--ink) !important;
+    background: transparent !important;
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    padding: 9px 16px !important;
+    border-radius: 999px !important;
+    cursor: pointer !important;
+    transition: all .18s !important;
+    font-family: var(--font-ui) !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+.product .add a.button:hover,
+.product .add .add_to_cart_button:hover {
+    background: var(--ink) !important;
+    color: var(--cream) !important;
+}
+.product .add a.added_to_cart {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--accent-deep);
+    text-decoration: underline;
+}
+
+/* Single product price + add to cart */
+.product-price-row {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--ink);
+    margin: 8px 0 0;
+}
+.product-price-row del {
+    color: var(--ink-faint);
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 8px;
+}
+.product-price-row ins {
+    text-decoration: none;
+}
+.single-add-to-cart {
+    margin-top: 12px;
+}
+.single-add-to-cart form.cart {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.single-add-to-cart .quantity {
+    display: flex;
+}
+.single-add-to-cart .qty {
+    width: 70px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    font-family: var(--font-ui);
+    font-size: 15px;
+    background: #fff;
+}
+.single-add-to-cart .single_add_to_cart_button {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 14px 28px !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-family: var(--font-ui) !important;
+    font-size: 15px !important;
+    cursor: pointer;
+    transition: all .18s;
+}
+.single-add-to-cart .single_add_to_cart_button:hover {
+    background: var(--accent-deep) !important;
+    transform: translateY(-2px);
+}
+
+/* Mini cart icon in header */
+.wc-block-mini-cart {
+    display: flex;
+    align-items: center;
+}
+.wc-block-mini-cart__button {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 11px !important;
+    border: 1px solid var(--line) !important;
+    background: #fff !important;
+    color: var(--ink) !important;
+    display: grid !important;
+    place-items: center !important;
+    cursor: pointer;
+    transition: all .18s;
+    padding: 0 !important;
+}
+.wc-block-mini-cart__button:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+.wc-block-mini-cart__badge {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+@media (max-width: 980px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
