@@ -339,6 +339,29 @@
     display: none !important;
   }
 
+  /* Keep the account + cart icons visible and fitted on narrow screens */
+  .site-header .header-inner.header-inner {
+    gap: 10px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .site-header .header-cta {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+  .site-header .brand-tagline.wp-block-site-tagline {
+    display: none !important;
+  }
+  .site-header .wp-block-woocommerce-customer-account .wc-block-customer-account__link,
+  .wc-block-mini-cart__button {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .site-header .menu-toggle {
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+  }
+
   /* Show and style the custom mobile-only semantic Listen button item at the bottom of the list */
   .site-header .mobile-only-listen {
     display: block !important;
