@@ -464,3 +464,20 @@ function equestrian_register_shop_filters_block() {
     );
 }
 add_action( 'init', 'equestrian_register_shop_filters_block' );
+
+/**
+ * The WooCommerce order-received (thank you) page renders inside the
+ * page-checkout.html template, but the block tree that WooCommerce swaps in
+ * for the "order received" state stops the theme's footer template part from
+ * rendering. Output it manually so the footer still appears on that page.
+ */
+function equestrian_fix_order_received_footer() {
+    if ( ! function_exists( 'is_order_received_page' ) || ! is_order_received_page() ) {
+        return;
+    }
+    $footer_part = get_block_template( get_stylesheet() . '//equestrian-footer', 'wp_template_part' );
+    if ( $footer_part && ! empty( $footer_part->content ) ) {
+        echo do_blocks( $footer_part->content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
+}
+add_action( 'wp_footer', 'equestrian_fix_order_received_footer', 5 );
