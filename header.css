@@ -265,7 +265,8 @@
     padding-right: 24px !important;
   }
   .site-header .wp-block-navigation.main-nav,
-  .site-header .wp-block-social-links.listen-mini {
+  .site-header .wp-block-social-links.listen-mini,
+  .site-header .wp-block-woocommerce-customer-account {
     display: none !important;
   }
   .site-header .menu-toggle {
