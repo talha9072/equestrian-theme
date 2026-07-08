@@ -84,6 +84,48 @@
     render();
   });
 
+  /* ---- episode share buttons ---- */
+  document.querySelectorAll('.share-fb').forEach(function (b) {
+    b.addEventListener('click', function () {
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(b.dataset.url), '_blank', 'noopener,width=600,height=500');
+    });
+  });
+  document.querySelectorAll('.share-x').forEach(function (b) {
+    b.addEventListener('click', function () {
+      const text = encodeURIComponent(b.dataset.title || '');
+      window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(b.dataset.url) + '&text=' + text, '_blank', 'noopener,width=600,height=500');
+    });
+  });
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy') ? resolve() : reject();
+      } catch (err) {
+        reject(err);
+      }
+      document.body.removeChild(ta);
+    });
+  }
+  document.querySelectorAll('.share-copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      copyText(b.dataset.url).then(function () {
+        toast('Link copied to clipboard');
+      }).catch(function () {
+        toast('Could not copy link');
+      });
+    });
+  });
+
   /* ---- compact "ep-play" buttons just toggle a pressed look ---- */
   document.querySelectorAll('.ep-play').forEach(function (b) {
     b.addEventListener('click', function (e) {
