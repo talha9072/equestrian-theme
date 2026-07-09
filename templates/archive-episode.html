@@ -1,14 +1,14 @@
 <!-- wp:template-part {"slug":"equestrian-header"} /-->
 
-<!-- wp:group {"tagName":"section","className":"section tight archive-hero"} -->
-<section class="wp-block-group section tight archive-hero">
-	<!-- wp:group {"className":"container section-head","layout":{"type":"flow"}} -->
-	<div class="wp-block-group container section-head is-layout-flow wp-block-group-is-layout-flow">
+<!-- wp:group {"className":"section tight archive-hero"} -->
+<div class="wp-block-group section tight archive-hero">
+	<!-- wp:group {"className":"container section-head"} -->
+	<div class="wp-block-group container section-head">
 		<!-- wp:paragraph {"className":"kicker"} -->
 		<p class="kicker">FROM THE ARCHIVE</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:heading {"className":"display"} -->
+		<!-- wp:heading {"level":1,"className":"display"} -->
 		<h1 class="wp-block-heading display">ALL EPISODES</h1>
 		<!-- /wp:heading -->
 
@@ -17,11 +17,11 @@
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
-</section>
+</div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","className":"section tight archive-list-section"} -->
-<section class="wp-block-group section tight archive-list-section">
+<!-- wp:group {"className":"section tight archive-list-section"} -->
+<div class="wp-block-group section tight archive-list-section">
 	<!-- wp:group {"className":"container"} -->
 	<div class="wp-block-group container">
 		<!-- wp:query {"query":{"perPage":50,"pages":0,"offset":0,"postType":"episode","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"ep-list"} -->
@@ -63,7 +63,7 @@
 		<!-- /wp:query -->
 	</div>
 	<!-- /wp:group -->
-</section>
+</div>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"equestrian-footer"} /-->

@@ -37,6 +37,13 @@ add_action( 'after_setup_theme', 'equestrian_theme_support' );
 // Editor assets
 function equestrian_editor_assets() {
     wp_enqueue_script( 'equestrian-theme-image-slot', get_template_directory_uri() . '/assets/image-slot.js', array(), '1.0.0', true );
+    wp_enqueue_script(
+        'equestrian-theme-editor-blocks',
+        get_template_directory_uri() . '/assets/editor-blocks.js',
+        array( 'wp-blocks', 'wp-element' ),
+        filemtime( get_template_directory() . '/assets/editor-blocks.js' ),
+        true
+    );
 }
 add_action( 'enqueue_block_editor_assets', 'equestrian_editor_assets' );
 
