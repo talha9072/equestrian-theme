@@ -431,13 +431,24 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .product-grid.four { grid-template-columns: repeat(4, 1fr); }
+.product,
+.product a,
+.product button {
+  -webkit-tap-highlight-color: transparent;
+}
 .product {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
   overflow: hidden; transition: all .2s;
   display: flex; flex-direction: column;
   width: 100%;
 }
-.product:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.product:hover { box-shadow: 0 4px 12px -4px rgba(42,37,32,.18); }
+.product a:focus,
+.product button:focus,
+.product a:active,
+.product button:active {
+  outline: none;
+}
 .product .pimg { display: block; width: 100%; aspect-ratio: 1/1; background: var(--cream-deep); position: relative; overflow: hidden; }
 .product .pimg figure { margin: 0; width: 100%; height: 100%; }
 .product .pimg img { width: 100%; height: 100%; object-fit: cover; }
