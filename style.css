@@ -860,6 +860,7 @@ body.hero-plank-on .hero-plank {
 .store-hero .lead {
     margin-top: 16px !important;
     max-width: 48ch;
+    margin-left: 0 !important;
 }
 .store-hero-note {
     display: flex;
