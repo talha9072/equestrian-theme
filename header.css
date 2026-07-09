@@ -2,10 +2,19 @@
    NATIVE WORDPRESS GUTENBERG HEADER OVERRIDES
    ============================================================ */
 
-/* --- site header wrap --- */
+/* --- site header wrap ---
+   The core/template-part block wraps our header in its own
+   <header class="wp-block-template-part"> element with no extra height of
+   its own, so making only the inner .site-header sticky gives it nowhere to
+   "hold on to" — it scrolls away immediately. Make the wrapper sticky too. */
+.wp-site-blocks > header.wp-block-template-part {
+  position: sticky;
+  top: var(--wp-admin--admin-bar--height, 0px);
+  z-index: 50;
+}
 .site-header.site-header {
   position: sticky;
-  top: 0;
+  top: var(--wp-admin--admin-bar--height, 0px);
   z-index: 50;
   background: rgba(246, 238, 224, 0.86);
   backdrop-filter: blur(12px);
